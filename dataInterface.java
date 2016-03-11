@@ -40,7 +40,7 @@ class DataInterface {
   public MongoCollection<Document> users;
   public MongoCollection<Document> beacons;
 
-
+ /*
   public static void main(String[] args) {
     DataInterface DI = new DataInterface("","");
 
@@ -52,16 +52,16 @@ class DataInterface {
     DI.newBeacon(id2, "none", 0, 0, 0, 0, "nowhere", interests);
 
     System.out.println(DI.findBeacons(2));
-    /*
+
     System.out.println(DI.getUserByID(id1));
-    System.out.println(DI.getUserByID(id2));
-    */
-  }
+    //System.out.println(DI.getUserByID(id2));
+
+  }*/
 
 
   public DataInterface(String host, String dbName) {
     mongoClient = new MongoClient();
-    db = mongoClient.getDatabase("test");
+    db = mongoClient.getDatabase("test3");
     users = db.getCollection("users");
     beacons = db.getCollection("beacons");
   }
@@ -71,16 +71,18 @@ class DataInterface {
   // returns String containing randomly generated ObjectID
   public String newUser(String uName, String passwd, String[] userInterests) {
 	ObjectId id = new ObjectId();
+	String parseID = id.toString();
 	String interests = "";
 	for (String str : userInterests) {
 		interests = interests + str + ", ";
 	}
     Document newUser = new Document("_id", id)
+    				   .append("uid", parseID)
     				   .append("name", uName)
                        .append("password", passwd)
                        .append("interests", interests);
     users.insertOne(newUser);
-    return id.toString();
+    return parseID;
 
   }
 
@@ -88,7 +90,7 @@ class DataInterface {
   // returns null for not found
   public String getUserByID(String userID) {
 	System.out.println(userID);
-    FindIterable<Document> user = users.find();//eq("_id.oid", userID));
+    FindIterable<Document> user = users.find(eq("uid", userID));
     System.out.println(user.first().toJson());//user.first().toJson();
     return "";
   }
