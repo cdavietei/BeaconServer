@@ -43,11 +43,19 @@ class DataInterface {
 
   public static void main(String[] args) {
     DataInterface DI = new DataInterface("","");
+
     String[] interests = {"fishing", "coding", "eating", "sleeping"};
     String id1 = DI.newUser("Taylor", "", interests);
     String id2 = DI.newUser("Chris", "password", interests);
+
+    DI.newBeacon(id1, "hello", 0, 0, 0, 0, "Ushaia", interests);
+    DI.newBeacon(id2, "none", 0, 0, 0, 0, "nowhere", interests);
+
+    System.out.println(DI.findBeacons(2));
+    /*
     System.out.println(DI.getUserByID(id1));
     System.out.println(DI.getUserByID(id2));
+    */
   }
 
 
@@ -77,8 +85,10 @@ class DataInterface {
   // returns JSON String representation of user object
   // returns null for not found
   public String getUserByID(String userID) {
-    FindIterable<Document> user = users.find(eq("_id", userID));
-    return user.first().toJson();
+	System.out.println(userID);
+    FindIterable<Document> user = users.find();//eq("_id.oid", userID));
+    System.out.println(user.first().toJson());//user.first().toJson();
+    return "";
   }
 
   public void newBeacon(String uid, String title, double latCoord, double longCoord,
@@ -95,5 +105,17 @@ class DataInterface {
 						 .append("range", range)
 						 .append("location", location)
 						 .append("interests", interests);
+	beacons.insertOne(newBeacon);
+  }
+
+  public String findBeacons(int n) {
+	  String beaconList = "";
+	  for (int i = 0; i < n; i++) {
+		  FindIterable<Document> iterable = beacons.find();
+		  Document beacon = iterable.first();
+		  beaconList = beaconList + beacon.toJson() + ", ";
+	  }
+
+	  return beaconList;
   }
 }
