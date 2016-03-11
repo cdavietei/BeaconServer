@@ -66,6 +66,8 @@ class DataInterface {
     beacons = db.getCollection("beacons");
   }
 
+  // User methods
+
   // returns String containing randomly generated ObjectID
   public String newUser(String uName, String passwd, String[] userInterests) {
 	ObjectId id = new ObjectId();
@@ -91,12 +93,16 @@ class DataInterface {
     return "";
   }
 
+  // Beacon methods
+
+  // creates a new beacon
   public void newBeacon(String uid, String title, double latCoord, double longCoord,
 		  			double duration, double range, String location, String[] userInterests) {
     String interests = "";
 	for (String str : userInterests) {
 		interests = interests + str + ", ";
 	}
+	interests = interests.substring(0,interests.length()-2);
 	Document newBeacon = new Document("user_id", uid)
 						 .append("title", title)
 						 .append("latCoord", latCoord)
@@ -108,6 +114,7 @@ class DataInterface {
 	beacons.insertOne(newBeacon);
   }
 
+  // returns a list of n beacons in JSON format
   public String findBeacons(int n) {
 	  String beaconList = "";
 	  for (int i = 0; i < n; i++) {
@@ -115,7 +122,8 @@ class DataInterface {
 		  Document beacon = iterable.first();
 		  beaconList = beaconList + beacon.toJson() + ", ";
 	  }
-
-	  return beaconList;
+	  beaconList = beaconList.substring(0, beaconList.length()-2);
+	  String jsonBeaconList = "{ \"beacon\": [" + beaconList + "]}";
+	  return jsonBeaconList;
   }
 }
