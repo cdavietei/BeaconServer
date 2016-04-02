@@ -7,84 +7,45 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies for beacon#beacon_2.10;0.1-SNAPSHOT [compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies beacon#beacon_2.10;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.6 [compile->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving org.scala-lang#scala-library;2.10.6 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@27b936d2[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@a15b99[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-lang#scala-library;2.10.6[0m
 [0m[[0mdebug[0m] [0m	found org.scala-lang#scala-library;2.10.6 in sbt-chain[0m
 [0m[[0mdebug[0m] [0m	[2.10.6] org.scala-lang#scala-library;2.10.6[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies beacon#beacon_2.10;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.6 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies beacon#beacon_2.10;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.6 [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies beacon#beacon_2.10;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.6 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies beacon#beacon_2.10;0.1-SNAPSHOT->org.mongodb#mongodb-driver;3.0.4 [compile->default(compile)][0m
-[0m[[0minfo[0m] [0mResolving org.mongodb#mongodb-driver;3.0.4 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.mongodb#mongodb-driver;3.0.4 {compile=[default(compile)]}[0m
-[0m[[0minfo[0m] [0mResolving org.mongodb#mongodb-driver;3.0.4 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain-delegate: Checking cache for: dependency: org.mongodb#mongodb-driver;3.0.4 {compile=[default(compile)]}[0m
-[0m[[0mdebug[0m] [0m		tried C:\Users\Taylor\.ivy2\local\org.mongodb\mongodb-driver\3.0.4\ivys\ivy.xml[0m
-[0m[[0mdebug[0m] [0m	local: no ivy file found for org.mongodb#mongodb-driver;3.0.4[0m
-[0m[[0mdebug[0m] [0m		tried https://repo1.maven.org/maven2/org/mongodb/mongodb-driver/3.0.4/mongodb-driver-3.0.4.pom[0m
-[0m[[0mdebug[0m] [0m	public: found md file for org.mongodb#mongodb-driver;3.0.4[0m
-[0m[[0mdebug[0m] [0m		=> https://repo1.maven.org/maven2/org/mongodb/mongodb-driver/3.0.4/mongodb-driver-3.0.4.pom (3.0.4)[0m
-[0m[[0mdebug[0m] [0mdownloading https://repo1.maven.org/maven2/org/mongodb/mongodb-driver/3.0.4/mongodb-driver-3.0.4.pom ...[0m
-[0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/org/mongodb/mongodb-driver/3.0.4/mongodb-driver-3.0.4.pom[0m
-[0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/org/mongodb/mongodb-driver/3.0.4/mongodb-driver-3.0.4.pom.sha1[0m
-[0m[[0mdebug[0m] [0msha1 OK for https://repo1.maven.org/maven2/org/mongodb/mongodb-driver/3.0.4/mongodb-driver-3.0.4.pom[0m
-[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] org.mongodb#mongodb-driver;3.0.4!mongodb-driver.pom(pom.original) (88ms)[0m
-[0m[[0mdebug[0m] [0m		tried C:\Users\Taylor\.ivy2\local\org.mongodb\mongodb-driver\3.0.4\jars\mongodb-driver.jar[0m
-[0m[[0mdebug[0m] [0m		tried https://repo1.maven.org/maven2/org/mongodb/mongodb-driver/3.0.4/mongodb-driver-3.0.4.jar[0m
-[0m[[0mdebug[0m] [0m	found org.mongodb#mongodb-driver;3.0.4 in public[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies beacon#beacon_2.10;0.1-SNAPSHOT->org.mongodb#mongodb-driver;3.0.4 [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies beacon#beacon_2.10;0.1-SNAPSHOT->org.mongodb#mongodb-driver;3.0.4 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.0.4->org.mongodb#bson;3.0.4 [compile->master(compile)][0m
-[0m[[0minfo[0m] [0mResolving org.mongodb#bson;3.0.4 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.mongodb#bson;3.0.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0minfo[0m] [0mResolving org.mongodb#bson;3.0.4 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain-delegate: Checking cache for: dependency: org.mongodb#bson;3.0.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0m		tried C:\Users\Taylor\.ivy2\local\org.mongodb\bson\3.0.4\ivys\ivy.xml[0m
-[0m[[0mdebug[0m] [0m	local: no ivy file found for org.mongodb#bson;3.0.4[0m
-[0m[[0mdebug[0m] [0m		tried https://repo1.maven.org/maven2/org/mongodb/bson/3.0.4/bson-3.0.4.pom[0m
-[0m[[0mdebug[0m] [0m	public: found md file for org.mongodb#bson;3.0.4[0m
-[0m[[0mdebug[0m] [0m		=> https://repo1.maven.org/maven2/org/mongodb/bson/3.0.4/bson-3.0.4.pom (3.0.4)[0m
-[0m[[0mdebug[0m] [0mdownloading https://repo1.maven.org/maven2/org/mongodb/bson/3.0.4/bson-3.0.4.pom ...[0m
-[0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/org/mongodb/bson/3.0.4/bson-3.0.4.pom[0m
-[0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/org/mongodb/bson/3.0.4/bson-3.0.4.pom.sha1[0m
-[0m[[0mdebug[0m] [0msha1 OK for https://repo1.maven.org/maven2/org/mongodb/bson/3.0.4/bson-3.0.4.pom[0m
-[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] org.mongodb#bson;3.0.4!bson.pom(pom.original) (61ms)[0m
-[0m[[0mdebug[0m] [0m		tried C:\Users\Taylor\.ivy2\local\org.mongodb\bson\3.0.4\jars\bson.jar[0m
-[0m[[0mdebug[0m] [0m		tried https://repo1.maven.org/maven2/org/mongodb/bson/3.0.4/bson-3.0.4.jar[0m
-[0m[[0mdebug[0m] [0m	found org.mongodb#bson;3.0.4 in public[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.0.4->org.mongodb#bson;3.0.4 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.0.4->org.mongodb#bson;3.0.4 [compile->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.0.4->org.mongodb#bson;3.0.4 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.0.4->org.mongodb#mongodb-driver-core;3.0.4 [compile->master(compile)][0m
-[0m[[0minfo[0m] [0mResolving org.mongodb#mongodb-driver-core;3.0.4 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.mongodb#mongodb-driver-core;3.0.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0minfo[0m] [0mResolving org.mongodb#mongodb-driver-core;3.0.4 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain-delegate: Checking cache for: dependency: org.mongodb#mongodb-driver-core;3.0.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0m		tried C:\Users\Taylor\.ivy2\local\org.mongodb\mongodb-driver-core\3.0.4\ivys\ivy.xml[0m
-[0m[[0mdebug[0m] [0m	local: no ivy file found for org.mongodb#mongodb-driver-core;3.0.4[0m
-[0m[[0mdebug[0m] [0m		tried https://repo1.maven.org/maven2/org/mongodb/mongodb-driver-core/3.0.4/mongodb-driver-core-3.0.4.pom[0m
-[0m[[0mdebug[0m] [0m	public: found md file for org.mongodb#mongodb-driver-core;3.0.4[0m
-[0m[[0mdebug[0m] [0m		=> https://repo1.maven.org/maven2/org/mongodb/mongodb-driver-core/3.0.4/mongodb-driver-core-3.0.4.pom (3.0.4)[0m
-[0m[[0mdebug[0m] [0mdownloading https://repo1.maven.org/maven2/org/mongodb/mongodb-driver-core/3.0.4/mongodb-driver-core-3.0.4.pom ...[0m
-[0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/org/mongodb/mongodb-driver-core/3.0.4/mongodb-driver-core-3.0.4.pom[0m
-[0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/org/mongodb/mongodb-driver-core/3.0.4/mongodb-driver-core-3.0.4.pom.sha1[0m
-[0m[[0mdebug[0m] [0msha1 OK for https://repo1.maven.org/maven2/org/mongodb/mongodb-driver-core/3.0.4/mongodb-driver-core-3.0.4.pom[0m
-[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] org.mongodb#mongodb-driver-core;3.0.4!mongodb-driver-core.pom(pom.original) (52ms)[0m
-[0m[[0mdebug[0m] [0m		tried C:\Users\Taylor\.ivy2\local\org.mongodb\mongodb-driver-core\3.0.4\jars\mongodb-driver-core.jar[0m
-[0m[[0mdebug[0m] [0m		tried https://repo1.maven.org/maven2/org/mongodb/mongodb-driver-core/3.0.4/mongodb-driver-core-3.0.4.jar[0m
-[0m[[0mdebug[0m] [0m	found org.mongodb#mongodb-driver-core;3.0.4 in public[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.0.4->org.mongodb#mongodb-driver-core;3.0.4 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver-core;3.0.4->org.mongodb#bson;3.0.4 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver-core;3.0.4->org.mongodb#bson;3.0.4 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.0.4->org.mongodb#mongodb-driver-core;3.0.4 [compile->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.0.4->org.mongodb#mongodb-driver-core;3.0.4 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver-core;3.0.4->org.mongodb#bson;3.0.4 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver-core;3.0.4->org.mongodb#bson;3.0.4 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.0.4->org.mongodb#bson;3.0.4 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.0.4->org.mongodb#bson;3.0.4 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.0.4->org.mongodb#mongodb-driver-core;3.0.4 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.0.4->org.mongodb#mongodb-driver-core;3.0.4 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies beacon#beacon_2.10;0.1-SNAPSHOT->org.mongodb#mongodb-driver;3.0.4 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies beacon#beacon_2.10;0.1-SNAPSHOT->org.mongodb#mongodb-driver;3.2.2 [compile->default(compile)][0m
+[0m[[0minfo[0m] [0mResolving org.mongodb#mongodb-driver;3.2.2 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.mongodb#mongodb-driver;3.2.2 {compile=[default(compile)]}[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.mongodb#mongodb-driver;3.2.2[0m
+[0m[[0mdebug[0m] [0m	found org.mongodb#mongodb-driver;3.2.2 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies beacon#beacon_2.10;0.1-SNAPSHOT->org.mongodb#mongodb-driver;3.2.2 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies beacon#beacon_2.10;0.1-SNAPSHOT->org.mongodb#mongodb-driver;3.2.2 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.2.2->org.mongodb#mongodb-driver-core;3.2.2 [compile->master(compile)][0m
+[0m[[0minfo[0m] [0mResolving org.mongodb#mongodb-driver-core;3.2.2 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.mongodb#mongodb-driver-core;3.2.2 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.mongodb#mongodb-driver-core;3.2.2[0m
+[0m[[0mdebug[0m] [0m	found org.mongodb#mongodb-driver-core;3.2.2 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.2.2->org.mongodb#mongodb-driver-core;3.2.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver-core;3.2.2->org.mongodb#bson;3.2.2 [compile->master(compile)][0m
+[0m[[0minfo[0m] [0mResolving org.mongodb#bson;3.2.2 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.mongodb#bson;3.2.2 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.mongodb#bson;3.2.2[0m
+[0m[[0mdebug[0m] [0m	found org.mongodb#bson;3.2.2 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver-core;3.2.2->org.mongodb#bson;3.2.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver-core;3.2.2->org.mongodb#bson;3.2.2 [compile->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver-core;3.2.2->org.mongodb#bson;3.2.2 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.2.2->org.mongodb#mongodb-driver-core;3.2.2 [compile->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.2.2->org.mongodb#mongodb-driver-core;3.2.2 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver-core;3.2.2->org.mongodb#bson;3.2.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver-core;3.2.2->org.mongodb#bson;3.2.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.2.2->org.mongodb#bson;3.2.2 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.2.2->org.mongodb#bson;3.2.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.2.2->org.mongodb#mongodb-driver-core;3.2.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.2.2->org.mongodb#mongodb-driver-core;3.2.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.2.2->org.mongodb#bson;3.2.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.2.2->org.mongodb#bson;3.2.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies beacon#beacon_2.10;0.1-SNAPSHOT->org.mongodb#mongodb-driver;3.2.2 [compile->master][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'runtime'[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for beacon#beacon_2.10;0.1-SNAPSHOT [runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for beacon#beacon_2.10;0.1-SNAPSHOT [compile][0m
@@ -92,22 +53,22 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies beacon#beacon_2.10;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.6 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies beacon#beacon_2.10;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.6 [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies beacon#beacon_2.10;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.6 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies beacon#beacon_2.10;0.1-SNAPSHOT->org.mongodb#mongodb-driver;3.0.4 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies beacon#beacon_2.10;0.1-SNAPSHOT->org.mongodb#mongodb-driver;3.0.4 [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies beacon#beacon_2.10;0.1-SNAPSHOT->org.mongodb#mongodb-driver;3.0.4 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.0.4->org.mongodb#bson;3.0.4 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.0.4->org.mongodb#bson;3.0.4 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.0.4->org.mongodb#mongodb-driver-core;3.0.4 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.0.4->org.mongodb#mongodb-driver-core;3.0.4 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver-core;3.0.4->org.mongodb#bson;3.0.4 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver-core;3.0.4->org.mongodb#bson;3.0.4 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.0.4->org.mongodb#bson;3.0.4 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.0.4->org.mongodb#bson;3.0.4 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.0.4->org.mongodb#mongodb-driver-core;3.0.4 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.0.4->org.mongodb#mongodb-driver-core;3.0.4 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver-core;3.0.4->org.mongodb#bson;3.0.4 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver-core;3.0.4->org.mongodb#bson;3.0.4 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies beacon#beacon_2.10;0.1-SNAPSHOT->org.mongodb#mongodb-driver;3.0.4 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies beacon#beacon_2.10;0.1-SNAPSHOT->org.mongodb#mongodb-driver;3.2.2 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies beacon#beacon_2.10;0.1-SNAPSHOT->org.mongodb#mongodb-driver;3.2.2 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies beacon#beacon_2.10;0.1-SNAPSHOT->org.mongodb#mongodb-driver;3.2.2 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.2.2->org.mongodb#mongodb-driver-core;3.2.2 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.2.2->org.mongodb#mongodb-driver-core;3.2.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver-core;3.2.2->org.mongodb#bson;3.2.2 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver-core;3.2.2->org.mongodb#bson;3.2.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.2.2->org.mongodb#bson;3.2.2 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.2.2->org.mongodb#bson;3.2.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.2.2->org.mongodb#mongodb-driver-core;3.2.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.2.2->org.mongodb#mongodb-driver-core;3.2.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver-core;3.2.2->org.mongodb#bson;3.2.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver-core;3.2.2->org.mongodb#bson;3.2.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.2.2->org.mongodb#bson;3.2.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.2.2->org.mongodb#bson;3.2.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies beacon#beacon_2.10;0.1-SNAPSHOT->org.mongodb#mongodb-driver;3.2.2 [compile->master][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'test'[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for beacon#beacon_2.10;0.1-SNAPSHOT [test][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for beacon#beacon_2.10;0.1-SNAPSHOT [runtime][0m
@@ -116,22 +77,22 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies beacon#beacon_2.10;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.6 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies beacon#beacon_2.10;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.6 [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies beacon#beacon_2.10;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.6 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies beacon#beacon_2.10;0.1-SNAPSHOT->org.mongodb#mongodb-driver;3.0.4 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies beacon#beacon_2.10;0.1-SNAPSHOT->org.mongodb#mongodb-driver;3.0.4 [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies beacon#beacon_2.10;0.1-SNAPSHOT->org.mongodb#mongodb-driver;3.0.4 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.0.4->org.mongodb#bson;3.0.4 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.0.4->org.mongodb#bson;3.0.4 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.0.4->org.mongodb#mongodb-driver-core;3.0.4 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.0.4->org.mongodb#mongodb-driver-core;3.0.4 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver-core;3.0.4->org.mongodb#bson;3.0.4 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver-core;3.0.4->org.mongodb#bson;3.0.4 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.0.4->org.mongodb#bson;3.0.4 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.0.4->org.mongodb#bson;3.0.4 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.0.4->org.mongodb#mongodb-driver-core;3.0.4 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.0.4->org.mongodb#mongodb-driver-core;3.0.4 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver-core;3.0.4->org.mongodb#bson;3.0.4 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver-core;3.0.4->org.mongodb#bson;3.0.4 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies beacon#beacon_2.10;0.1-SNAPSHOT->org.mongodb#mongodb-driver;3.0.4 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies beacon#beacon_2.10;0.1-SNAPSHOT->org.mongodb#mongodb-driver;3.2.2 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies beacon#beacon_2.10;0.1-SNAPSHOT->org.mongodb#mongodb-driver;3.2.2 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies beacon#beacon_2.10;0.1-SNAPSHOT->org.mongodb#mongodb-driver;3.2.2 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.2.2->org.mongodb#mongodb-driver-core;3.2.2 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.2.2->org.mongodb#mongodb-driver-core;3.2.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver-core;3.2.2->org.mongodb#bson;3.2.2 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver-core;3.2.2->org.mongodb#bson;3.2.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.2.2->org.mongodb#bson;3.2.2 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.2.2->org.mongodb#bson;3.2.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.2.2->org.mongodb#mongodb-driver-core;3.2.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.2.2->org.mongodb#mongodb-driver-core;3.2.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver-core;3.2.2->org.mongodb#bson;3.2.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver-core;3.2.2->org.mongodb#bson;3.2.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.2.2->org.mongodb#bson;3.2.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.2.2->org.mongodb#bson;3.2.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies beacon#beacon_2.10;0.1-SNAPSHOT->org.mongodb#mongodb-driver;3.2.2 [compile->master][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'provided'[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for beacon#beacon_2.10;0.1-SNAPSHOT [provided][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'optional'[0m
@@ -143,22 +104,22 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies beacon#beacon_2.10;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.6 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies beacon#beacon_2.10;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.6 [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies beacon#beacon_2.10;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.6 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies beacon#beacon_2.10;0.1-SNAPSHOT->org.mongodb#mongodb-driver;3.0.4 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies beacon#beacon_2.10;0.1-SNAPSHOT->org.mongodb#mongodb-driver;3.0.4 [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies beacon#beacon_2.10;0.1-SNAPSHOT->org.mongodb#mongodb-driver;3.0.4 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.0.4->org.mongodb#bson;3.0.4 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.0.4->org.mongodb#bson;3.0.4 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.0.4->org.mongodb#mongodb-driver-core;3.0.4 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.0.4->org.mongodb#mongodb-driver-core;3.0.4 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver-core;3.0.4->org.mongodb#bson;3.0.4 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver-core;3.0.4->org.mongodb#bson;3.0.4 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.0.4->org.mongodb#bson;3.0.4 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.0.4->org.mongodb#bson;3.0.4 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.0.4->org.mongodb#mongodb-driver-core;3.0.4 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.0.4->org.mongodb#mongodb-driver-core;3.0.4 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver-core;3.0.4->org.mongodb#bson;3.0.4 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver-core;3.0.4->org.mongodb#bson;3.0.4 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies beacon#beacon_2.10;0.1-SNAPSHOT->org.mongodb#mongodb-driver;3.0.4 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies beacon#beacon_2.10;0.1-SNAPSHOT->org.mongodb#mongodb-driver;3.2.2 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies beacon#beacon_2.10;0.1-SNAPSHOT->org.mongodb#mongodb-driver;3.2.2 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies beacon#beacon_2.10;0.1-SNAPSHOT->org.mongodb#mongodb-driver;3.2.2 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.2.2->org.mongodb#mongodb-driver-core;3.2.2 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.2.2->org.mongodb#mongodb-driver-core;3.2.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver-core;3.2.2->org.mongodb#bson;3.2.2 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver-core;3.2.2->org.mongodb#bson;3.2.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.2.2->org.mongodb#bson;3.2.2 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.2.2->org.mongodb#bson;3.2.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.2.2->org.mongodb#mongodb-driver-core;3.2.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.2.2->org.mongodb#mongodb-driver-core;3.2.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver-core;3.2.2->org.mongodb#bson;3.2.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver-core;3.2.2->org.mongodb#bson;3.2.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.2.2->org.mongodb#bson;3.2.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.2.2->org.mongodb#bson;3.2.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies beacon#beacon_2.10;0.1-SNAPSHOT->org.mongodb#mongodb-driver;3.2.2 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for beacon#beacon_2.10;0.1-SNAPSHOT [optional][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for beacon#beacon_2.10;0.1-SNAPSHOT [provided][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'runtime-internal'[0m
@@ -169,22 +130,22 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies beacon#beacon_2.10;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.6 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies beacon#beacon_2.10;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.6 [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies beacon#beacon_2.10;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.6 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies beacon#beacon_2.10;0.1-SNAPSHOT->org.mongodb#mongodb-driver;3.0.4 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies beacon#beacon_2.10;0.1-SNAPSHOT->org.mongodb#mongodb-driver;3.0.4 [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies beacon#beacon_2.10;0.1-SNAPSHOT->org.mongodb#mongodb-driver;3.0.4 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.0.4->org.mongodb#bson;3.0.4 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.0.4->org.mongodb#bson;3.0.4 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.0.4->org.mongodb#mongodb-driver-core;3.0.4 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.0.4->org.mongodb#mongodb-driver-core;3.0.4 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver-core;3.0.4->org.mongodb#bson;3.0.4 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver-core;3.0.4->org.mongodb#bson;3.0.4 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.0.4->org.mongodb#bson;3.0.4 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.0.4->org.mongodb#bson;3.0.4 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.0.4->org.mongodb#mongodb-driver-core;3.0.4 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.0.4->org.mongodb#mongodb-driver-core;3.0.4 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver-core;3.0.4->org.mongodb#bson;3.0.4 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver-core;3.0.4->org.mongodb#bson;3.0.4 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies beacon#beacon_2.10;0.1-SNAPSHOT->org.mongodb#mongodb-driver;3.0.4 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies beacon#beacon_2.10;0.1-SNAPSHOT->org.mongodb#mongodb-driver;3.2.2 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies beacon#beacon_2.10;0.1-SNAPSHOT->org.mongodb#mongodb-driver;3.2.2 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies beacon#beacon_2.10;0.1-SNAPSHOT->org.mongodb#mongodb-driver;3.2.2 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.2.2->org.mongodb#mongodb-driver-core;3.2.2 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.2.2->org.mongodb#mongodb-driver-core;3.2.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver-core;3.2.2->org.mongodb#bson;3.2.2 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver-core;3.2.2->org.mongodb#bson;3.2.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.2.2->org.mongodb#bson;3.2.2 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.2.2->org.mongodb#bson;3.2.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.2.2->org.mongodb#mongodb-driver-core;3.2.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.2.2->org.mongodb#mongodb-driver-core;3.2.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver-core;3.2.2->org.mongodb#bson;3.2.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver-core;3.2.2->org.mongodb#bson;3.2.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.2.2->org.mongodb#bson;3.2.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.2.2->org.mongodb#bson;3.2.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies beacon#beacon_2.10;0.1-SNAPSHOT->org.mongodb#mongodb-driver;3.2.2 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for beacon#beacon_2.10;0.1-SNAPSHOT [optional][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'test-internal'[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for beacon#beacon_2.10;0.1-SNAPSHOT [test-internal][0m
@@ -195,22 +156,22 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies beacon#beacon_2.10;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.6 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies beacon#beacon_2.10;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.6 [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies beacon#beacon_2.10;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.6 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies beacon#beacon_2.10;0.1-SNAPSHOT->org.mongodb#mongodb-driver;3.0.4 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies beacon#beacon_2.10;0.1-SNAPSHOT->org.mongodb#mongodb-driver;3.0.4 [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies beacon#beacon_2.10;0.1-SNAPSHOT->org.mongodb#mongodb-driver;3.0.4 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.0.4->org.mongodb#bson;3.0.4 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.0.4->org.mongodb#bson;3.0.4 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.0.4->org.mongodb#mongodb-driver-core;3.0.4 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.0.4->org.mongodb#mongodb-driver-core;3.0.4 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver-core;3.0.4->org.mongodb#bson;3.0.4 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver-core;3.0.4->org.mongodb#bson;3.0.4 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.0.4->org.mongodb#bson;3.0.4 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.0.4->org.mongodb#bson;3.0.4 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.0.4->org.mongodb#mongodb-driver-core;3.0.4 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.0.4->org.mongodb#mongodb-driver-core;3.0.4 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver-core;3.0.4->org.mongodb#bson;3.0.4 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver-core;3.0.4->org.mongodb#bson;3.0.4 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies beacon#beacon_2.10;0.1-SNAPSHOT->org.mongodb#mongodb-driver;3.0.4 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies beacon#beacon_2.10;0.1-SNAPSHOT->org.mongodb#mongodb-driver;3.2.2 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies beacon#beacon_2.10;0.1-SNAPSHOT->org.mongodb#mongodb-driver;3.2.2 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies beacon#beacon_2.10;0.1-SNAPSHOT->org.mongodb#mongodb-driver;3.2.2 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.2.2->org.mongodb#mongodb-driver-core;3.2.2 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.2.2->org.mongodb#mongodb-driver-core;3.2.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver-core;3.2.2->org.mongodb#bson;3.2.2 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver-core;3.2.2->org.mongodb#bson;3.2.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.2.2->org.mongodb#bson;3.2.2 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.2.2->org.mongodb#bson;3.2.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.2.2->org.mongodb#mongodb-driver-core;3.2.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.2.2->org.mongodb#mongodb-driver-core;3.2.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver-core;3.2.2->org.mongodb#bson;3.2.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver-core;3.2.2->org.mongodb#bson;3.2.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.2.2->org.mongodb#bson;3.2.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#mongodb-driver;3.2.2->org.mongodb#bson;3.2.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies beacon#beacon_2.10;0.1-SNAPSHOT->org.mongodb#mongodb-driver;3.2.2 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for beacon#beacon_2.10;0.1-SNAPSHOT [optional][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for beacon#beacon_2.10;0.1-SNAPSHOT [provided][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'plugin'[0m
@@ -278,29 +239,14 @@
 [0m[[0mdebug[0m] [0m	resolved ivy file produced in cache[0m
 [0m[[0mdebug[0m] [0m:: downloading artifacts ::[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-library;2.10.6!scala-library.jar[0m
-[0m[[0mdebug[0m] [0m		tried https://repo1.maven.org/maven2/org/mongodb/mongodb-driver/3.0.4/mongodb-driver-3.0.4.jar[0m
-[0m[[0minfo[0m] [0mdownloading https://repo1.maven.org/maven2/org/mongodb/mongodb-driver/3.0.4/mongodb-driver-3.0.4.jar ...[0m
-[0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/org/mongodb/mongodb-driver/3.0.4/mongodb-driver-3.0.4.jar[0m
-[0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/org/mongodb/mongodb-driver/3.0.4/mongodb-driver-3.0.4.jar.sha1[0m
-[0m[[0mdebug[0m] [0msha1 OK for https://repo1.maven.org/maven2/org/mongodb/mongodb-driver/3.0.4/mongodb-driver-3.0.4.jar[0m
-[0m[[0minfo[0m] [0m	[SUCCESSFUL ] org.mongodb#mongodb-driver;3.0.4!mongodb-driver.jar (132ms)[0m
-[0m[[0mdebug[0m] [0m		tried https://repo1.maven.org/maven2/org/mongodb/bson/3.0.4/bson-3.0.4.jar[0m
-[0m[[0minfo[0m] [0mdownloading https://repo1.maven.org/maven2/org/mongodb/bson/3.0.4/bson-3.0.4.jar ...[0m
-[0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/org/mongodb/bson/3.0.4/bson-3.0.4.jar[0m
-[0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/org/mongodb/bson/3.0.4/bson-3.0.4.jar.sha1[0m
-[0m[[0mdebug[0m] [0msha1 OK for https://repo1.maven.org/maven2/org/mongodb/bson/3.0.4/bson-3.0.4.jar[0m
-[0m[[0minfo[0m] [0m	[SUCCESSFUL ] org.mongodb#bson;3.0.4!bson.jar (99ms)[0m
-[0m[[0mdebug[0m] [0m		tried https://repo1.maven.org/maven2/org/mongodb/mongodb-driver-core/3.0.4/mongodb-driver-core-3.0.4.jar[0m
-[0m[[0minfo[0m] [0mdownloading https://repo1.maven.org/maven2/org/mongodb/mongodb-driver-core/3.0.4/mongodb-driver-core-3.0.4.jar ...[0m
-[0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/org/mongodb/mongodb-driver-core/3.0.4/mongodb-driver-core-3.0.4.jar[0m
-[0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/org/mongodb/mongodb-driver-core/3.0.4/mongodb-driver-core-3.0.4.jar.sha1[0m
-[0m[[0mdebug[0m] [0msha1 OK for https://repo1.maven.org/maven2/org/mongodb/mongodb-driver-core/3.0.4/mongodb-driver-core-3.0.4.jar[0m
-[0m[[0minfo[0m] [0m	[SUCCESSFUL ] org.mongodb#mongodb-driver-core;3.0.4!mongodb-driver-core.jar (161ms)[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.mongodb#mongodb-driver;3.2.2!mongodb-driver.jar[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.mongodb#mongodb-driver-core;3.2.2!mongodb-driver-core.jar[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.mongodb#bson;3.2.2!bson.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-compiler;2.10.6!scala-compiler.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-reflect;2.10.6!scala-reflect.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#jline;2.10.6!jline.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.fusesource.jansi#jansi;1.4!jansi.jar[0m
-[0m[[0mdebug[0m] [0m:: resolution report :: resolve 1947ms :: artifacts dl 436ms[0m
+[0m[[0mdebug[0m] [0m:: resolution report :: resolve 443ms :: artifacts dl 18ms[0m
 [0m[[0mdebug[0m] [0m	report for beacon#beacon_2.10;0.1-SNAPSHOT compile produced in C:\Users\Taylor\Programs\Beacon\BeaconServer\target\resolution-cache\reports\beacon-beacon_2.10-compile.xml[0m
 [0m[[0mdebug[0m] [0m	report for beacon#beacon_2.10;0.1-SNAPSHOT runtime produced in C:\Users\Taylor\Programs\Beacon\BeaconServer\target\resolution-cache\reports\beacon-beacon_2.10-runtime.xml[0m
 [0m[[0mdebug[0m] [0m	report for beacon#beacon_2.10;0.1-SNAPSHOT test produced in C:\Users\Taylor\Programs\Beacon\BeaconServer\target\resolution-cache\reports\beacon-beacon_2.10-test.xml[0m
@@ -314,5 +260,5 @@
 [0m[[0mdebug[0m] [0m	report for beacon#beacon_2.10;0.1-SNAPSHOT docs produced in C:\Users\Taylor\Programs\Beacon\BeaconServer\target\resolution-cache\reports\beacon-beacon_2.10-docs.xml[0m
 [0m[[0mdebug[0m] [0m	report for beacon#beacon_2.10;0.1-SNAPSHOT pom produced in C:\Users\Taylor\Programs\Beacon\BeaconServer\target\resolution-cache\reports\beacon-beacon_2.10-pom.xml[0m
 [0m[[0mdebug[0m] [0m	report for beacon#beacon_2.10;0.1-SNAPSHOT scala-tool produced in C:\Users\Taylor\Programs\Beacon\BeaconServer\target\resolution-cache\reports\beacon-beacon_2.10-scala-tool.xml[0m
-[0m[[0mdebug[0m] [0m	resolve done (1947ms resolve - 436ms download)[0m
+[0m[[0mdebug[0m] [0m	resolve done (443ms resolve - 18ms download)[0m
 [0m[[0minfo[0m] [0mDone updating.[0m
