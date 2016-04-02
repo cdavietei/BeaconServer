@@ -125,12 +125,16 @@ class BeaconUser {
     return updated;
   }
 
-  public void addInterest(String newInterest) {
+  public boolean addInterest(String newInterest) {
     users.updateOne(eq("username", this.username), push("interests", newInterest));
   }
 
-  public void addInterests(ArrayList<String> newInterests) {
+  public boolean addInterests(ArrayList<String> newInterests) {
     users.updateOne(eq("username", this.username), pushEach("interests", newInterests));
+  }
+
+  public boolean updateLastLocation(double latCoord, double longCoord) {
+    //
   }
 
   // close the user's connection to the database
