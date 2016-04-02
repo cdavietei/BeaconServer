@@ -1,6 +1,7 @@
 package beacon;
 
 import static com.mongodb.client.model.Filters.eq;
+import static com.mongodb.client.model.Updates.pull;
 import static com.mongodb.client.model.Updates.push;
 import static com.mongodb.client.model.Updates.pushEach;
 import static com.mongodb.client.model.Updates.set;
@@ -132,19 +133,24 @@ public class BeaconUser {
   }
 
   public boolean addInterest(String newInterest) {
-    UpdateResult result = users.updateOne(eq("username", this.username), push("interests", newInterest));
-    return (result.getModifiedCount() > 0);
+    UpdateResult ur = users.updateOne(eq("username", this.username), push("interests", newInterest));
+    return (ur.getModifiedCount() > 0);
   }
 
   public boolean addInterests(ArrayList<String> newInterests) {
-    UpdateResult result = users.updateOne(eq("username", this.username), pushEach("interests", newInterests));
-    return (result.getModifiedCount() > 0);
+    UpdateResult ur = users.updateOne(eq("username", this.username), pushEach("interests", newInterests));
+    return (ur.getModifiedCount() > 0);
+  }
+
+  public boolean removeInterest(String removeTarget) {
+    UpdateResult ur = users.updateOne(eq("username", this.username), pull("interests", removeTarget));
+    return (ur.getModifiedCount() > 0);
   }
 
   public boolean updateLastLocation(double latCoord, double longCoord) {
     Point newLocation = new Point(new Position(longCoord, latCoord));
-    UpdateResult result = users.updateOne(eq("username", this.username), set("lastLocation", newLocation));
-    return (result.getModifiedCount() > 0);
+    UpdateResult ur = users.updateOne(eq("username", this.username), set("lastLocation", newLocation));
+    return (ur.getModifiedCount() > 0);
   }
 
   // close the user's connection to the database
