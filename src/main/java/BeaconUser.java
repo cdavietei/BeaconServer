@@ -12,6 +12,7 @@ import com.mongodb.client.model.geojson.Point;
 import com.mongodb.client.model.geojson.Position;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.result.UpdateResult;
 import org.bson.Document;
 
 import java.util.ArrayList;
@@ -78,17 +79,22 @@ class BeaconUser {
 
   // loads user instance from database into constructed BeaconUser instance
   // returns String of the entire BeaconUser object as JSON
+  // returns empty String if user is not found
   public String getUserByName(String name) {
+    String userAsJson = null;
     FindIterable<Document> userIterable = users.find(eq("username", name));
     Document thisUser = userIterable.first();
 
-    this.username = thisUser.getString("username");
-    this.passwordSalt = thisUser.getString("passwordSalt");
-    this.passwordHash = thisUser.getString("passwordHash");
-    this.interests = thisUser.get("interests", ArrayList.class); // casts interests field to ArrayList
-    this.lastLocation = thisUser.get("lastLocation", Point.class);
+    if (thisUser != null) {
+      this.username = thisUser.getString("username");
+      this.passwordSalt = thisUser.getString("passwordSalt");
+      this.passwordHash = thisUser.getString("passwordHash");
+      this.interests = thisUser.get("interests", ArrayList.class); // casts interests field to ArrayList
+      this.lastLocation = thisUser.get("lastLocation", Point.class);
 
-    return thisUser.toJson();
+      userAsJson = thisUser.toJson();
+    }
+    return userAsJson;
   }
 
   // Data member accessor methods
@@ -126,15 +132,19 @@ class BeaconUser {
   }
 
   public boolean addInterest(String newInterest) {
-    users.updateOne(eq("username", this.username), push("interests", newInterest));
+    UpdateResult result = users.updateOne(eq("username", this.username), push("interests", newInterest));
+    return (result.getModifiedCount() > 0);
   }
 
   public boolean addInterests(ArrayList<String> newInterests) {
-    users.updateOne(eq("username", this.username), pushEach("interests", newInterests));
+    UpdateResult result = users.updateOne(eq("username", this.username), pushEach("interests", newInterests));
+    return (result.getModifiedCount() > 0);
   }
 
   public boolean updateLastLocation(double latCoord, double longCoord) {
-    //
+    Point newLocation = new Point(new Position(longCoord, latCoord));
+    UpdateResult result = users.updateOne(eq("username", this.username), set("lastLocation", newLocation));
+    return (result.getModifiedCount() > 0);
   }
 
   // close the user's connection to the database
