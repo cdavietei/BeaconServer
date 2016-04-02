@@ -1,15 +1,36 @@
 [0m[[0mdebug[0m] [0m[naha] [0m
 [0m[[0mdebug[0m] [0m[naha] Initial source changes: [0m
 [0m[[0mdebug[0m] [0m[naha] 	removed:Set()[0m
-[0m[[0mdebug[0m] [0m[naha] 	added: Set()[0m
+[0m[[0mdebug[0m] [0m[naha] 	added: Set(C:\Users\Taylor\Programs\Beacon\BeaconServer\BeaconUser.java)[0m
 [0m[[0mdebug[0m] [0m[naha] 	modified: Set()[0m
 [0m[[0mdebug[0m] [0m[naha] Invalidated products: Set()[0m
 [0m[[0mdebug[0m] [0m[naha] External API changes: API Changes: Set()[0m
 [0m[[0mdebug[0m] [0m[naha] Modified binary dependencies: Set()[0m
-[0m[[0mdebug[0m] [0m[naha] Initial directly invalidated sources: Set()[0m
+[0m[[0mdebug[0m] [0m[naha] Initial directly invalidated sources: Set(C:\Users\Taylor\Programs\Beacon\BeaconServer\BeaconUser.java)[0m
 [0m[[0mdebug[0m] [0m[naha] [0m
 [0m[[0mdebug[0m] [0m[naha] Sources indirectly invalidated by:[0m
 [0m[[0mdebug[0m] [0m[naha] 	product: Set()[0m
 [0m[[0mdebug[0m] [0m[naha] 	binary dep: Set()[0m
 [0m[[0mdebug[0m] [0m[naha] 	external source: Set()[0m
-[0m[[0mdebug[0m] [0mAll initially invalidated sources: Set()[0m
+[0m[[0mdebug[0m] [0mAll initially invalidated sources: Set(C:\Users\Taylor\Programs\Beacon\BeaconServer\BeaconUser.java)[0m
+[0m[[0mdebug[0m] [0m[naha] Recompiling all 1 sources: invalidated sources (1) exceeded 50.0% of all sources[0m
+[0m[[0minfo[0m] [0mCompiling 1 Java source to C:\Users\Taylor\Programs\Beacon\BeaconServer\target\scala-2.10\classes...[0m
+[0m[[0minfo[0m] [0mNote: C:\Users\Taylor\Programs\Beacon\BeaconServer\BeaconUser.java uses unchecked or unsafe operations.[0m
+[0m[[0minfo[0m] [0mNote: Recompile with -Xlint:unchecked for details.[0m
+[0m[[0mdebug[0m] [0mJava compilation took 0.943759404 s[0m
+[0m[[0mdebug[0m] [0mJava analysis took 0.319690054 s[0m
+[0m[[0mdebug[0m] [0mJava compile + analysis took 1.269165445 s[0m
+[0m[[0mdebug[0m] [0m[naha] Invalidating C:\Users\Taylor\Programs\Beacon\BeaconServer\BeaconUser.java...[0m
+[0m[[0mdebug[0m] [0m[naha] Invalidating (transitively) by inheritance from C:\Users\Taylor\Programs\Beacon\BeaconServer\BeaconUser.java...[0m
+[0m[[0mdebug[0m] [0m[naha] Initial set of included nodes: Set(C:\Users\Taylor\Programs\Beacon\BeaconServer\BeaconUser.java)[0m
+[0m[[0mdebug[0m] [0m[naha] Invalidated by transitive inheritance dependency: Set(C:\Users\Taylor\Programs\Beacon\BeaconServer\BeaconUser.java)[0m
+[0m[[0mdebug[0m] [0m[naha] The C:\Users\Taylor\Programs\Beacon\BeaconServer\BeaconUser.java source file has the following regular definitions changed:[0m
+[0m[[0mdebug[0m] [0m[naha] 	notify, wait, insert, equals, username, users, mongoClient, db, BeaconUser, notifyAll, <init>, lastLocation, getUserByName, interests, toString, getClass, hashCode.[0m
+[0m[[0mdebug[0m] [0m[naha] All member reference dependencies will be considered within this context.[0m
+[0m[[0mdebug[0m] [0m[naha] Name hashing optimization doesn't apply to non-Scala dependency: C:\Users\Taylor\Programs\Beacon\BeaconServer\BeaconUser.java[0m
+[0m[[0mdebug[0m] [0m[naha] New invalidations:[0m
+[0m[[0mdebug[0m] [0m[naha] 	Set()[0m
+[0m[[0mdebug[0m] [0m[naha] Initial set of included nodes: Set()[0m
+[0m[[0mdebug[0m] [0m[naha] Previously invalidated, but (transitively) depend on new invalidations:[0m
+[0m[[0mdebug[0m] [0m[naha] 	Set()[0m
+[0m[[0mdebug[0m] [0m[naha] All newly invalidated sources after taking into account (previously) recompiled sources:Set()[0m
