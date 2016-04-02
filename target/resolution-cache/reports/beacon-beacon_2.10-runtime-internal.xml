@@ -7,7 +7,7 @@
 		revision="0.1-SNAPSHOT"
 		conf="runtime-internal"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool"
-		date="20160402192125"/>
+		date="20160402192700"/>
 	<dependencies>
 		<module organisation="org.mongodb" name="mongodb-driver">
 			<revision name="3.2.2" status="release" pubdate="20160215112003" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.mongodb.org" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="1">
