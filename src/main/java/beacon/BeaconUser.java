@@ -1,23 +1,31 @@
 package beacon;
 
+import static com.mongodb.client.model.Aggregates.limit;
+import static com.mongodb.client.model.Aggregates.match;
 import static com.mongodb.client.model.Filters.eq;
+import static com.mongodb.client.model.Filters.geoWithinCenterSphere;
+import static com.mongodb.client.model.Filters.in;
+import static com.mongodb.client.model.Updates.addEachToSet;
+import static com.mongodb.client.model.Updates.addToSet;
 import static com.mongodb.client.model.Updates.pull;
 import static com.mongodb.client.model.Updates.pullAll;
-import static com.mongodb.client.model.Updates.push;
-import static com.mongodb.client.model.Updates.pushEach;
 import static com.mongodb.client.model.Updates.set;
+import static java.util.Arrays.asList;
 
 import com.mongodb.MongoClient;
 import com.mongodb.MongoWriteException;
+import com.mongodb.client.AggregateIterable;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.model.geojson.Point;
 import com.mongodb.client.model.geojson.Position;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.MongoIterable;
 import com.mongodb.client.result.UpdateResult;
 import org.bson.Document;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class BeaconUser {
@@ -25,6 +33,8 @@ public class BeaconUser {
   public MongoClient mongoClient;
   public MongoDatabase db;
   public MongoCollection<Document> users;
+  public MongoCollection<Document> beacons;
+
   // BeaconUser fields
   public String username;
   private String passwordSalt;
@@ -38,6 +48,7 @@ public class BeaconUser {
     mongoClient = new MongoClient(host);
     db = mongoClient.getDatabase(dbName);
     users = db.getCollection("users");
+    beacons = db.getCollection("beacons");
   }
 
   // use when creating a new user
@@ -134,12 +145,12 @@ public class BeaconUser {
   }
 
   public boolean addInterest(String newInterest) {
-    UpdateResult ur = users.updateOne(eq("username", this.username), push("interests", newInterest));
+    UpdateResult ur = users.updateOne(eq("username", this.username), addToSet("interests", newInterest));
     return (ur.getModifiedCount() > 0);
   }
 
   public boolean addInterests(ArrayList<String> newInterests) {
-    UpdateResult ur = users.updateOne(eq("username", this.username), pushEach("interests", newInterests));
+    UpdateResult ur = users.updateOne(eq("username", this.username), addEachToSet("interests", newInterests));
     return (ur.getModifiedCount() > 0);
   }
 
@@ -157,6 +168,62 @@ public class BeaconUser {
     Point newLocation = new Point(new Position(longCoord, latCoord));
     UpdateResult ur = users.updateOne(eq("username", this.username), set("lastLocation", newLocation));
     return (ur.getModifiedCount() > 0);
+  }
+
+  // Beacon search methods
+
+  // input max number of beacons, user's coordinates, and proximity in miles
+  // returns JSON formatted String of the form { beacons: [ <beacons> ]}
+  // where <beacons> is a list of max beacons within distance of the user's coordinates
+  public String findNearbyBeacons(int max, double latCoord, double longCoord, double distance) {
+    // filter by the geoWithinCenterSphere filter
+    // distance / 3963.2 converts distance to radians (3963.2 approximates Earth's radius)
+    FindIterable<Document> iterable = beacons.find(geoWithinCenterSphere(
+                                                    "location",
+                                                    longCoord,
+                                                    latCoord,
+                                                    distance / 3963.2
+                                                   ))
+                                                   .limit(max);
+
+    String result = iterableToJson("beacons", iterable);
+    return result;
+  }
+
+  public String findNearbyBeaconsByTags(int max, double latCoord, double longCoord, double distance, ArrayList<String> tags) {
+    // aggregate result Documents from beacons collection
+    AggregateIterable<Document> beaconAggregation = beacons.aggregate(asList(
+      // first match nearby beacons
+      match(geoWithinCenterSphere("location", longCoord, latCoord, distance / 3963.2)),
+      // only match beacons with the correct tags
+      match(in("tags", tags)),
+      // limit the aggregation to specified number of beacons
+      limit(max)
+    ));
+
+    String result = iterableToJson("beacons", beaconAggregation);
+    return result;
+  }
+
+  // returns a JSON formatted String in the form { <name> : [<content>] }
+  // where <content> is the list of Documents in the iterable parameter also in JSON format
+  public static String iterableToJson(String name, MongoIterable<Document> iterable) {
+    String returnList = "{ \"" + name + "\": [";
+
+    // get the response in the iterable as a List of Documents
+    List<Document> docList = iterable.into(new ArrayList<Document>());
+
+    if (!docList.isEmpty()) {
+      for (Document doc: docList) {
+        returnList += doc.toJson() + ",";
+      }
+
+      // remove the final, extra comma by taking substring of everything but last character
+      returnList = returnList.substring(0, returnList.length() - 2);
+    }
+    returnList += "]}"; // complete correct JSON format
+
+    return returnList;
   }
 
   // close the user's connection to the database
