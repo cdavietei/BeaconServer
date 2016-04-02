@@ -18,7 +18,7 @@ import org.bson.Document;
 import java.util.ArrayList;
 
 
-class BeaconUser {
+public class BeaconUser {
   // database connection members
   public MongoClient mongoClient;
   public MongoDatabase db;
