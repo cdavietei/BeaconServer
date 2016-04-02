@@ -2,6 +2,7 @@ package beacon;
 
 import static com.mongodb.client.model.Filters.eq;
 import static com.mongodb.client.model.Updates.pull;
+import static com.mongodb.client.model.Updates.pullAll;
 import static com.mongodb.client.model.Updates.push;
 import static com.mongodb.client.model.Updates.pushEach;
 import static com.mongodb.client.model.Updates.set;
@@ -144,6 +145,11 @@ public class BeaconUser {
 
   public boolean removeInterest(String removeTarget) {
     UpdateResult ur = users.updateOne(eq("username", this.username), pull("interests", removeTarget));
+    return (ur.getModifiedCount() > 0);
+  }
+
+  public boolean removeInterests(ArrayList<String> removeTargets) {
+    UpdateResult ur = users.updateOne(eq("username", this.username), pullAll("interests", removeTargets));
     return (ur.getModifiedCount() > 0);
   }
 
