@@ -1,6 +1,9 @@
 package beacon;
 
 import static com.mongodb.client.model.Filters.eq;
+import static com.mongodb.client.model.Updates.push;
+import static com.mongodb.client.model.Updates.pushEach;
+import static com.mongodb.client.model.Updates.set;
 
 import com.mongodb.MongoClient;
 import com.mongodb.MongoWriteException;
@@ -65,7 +68,8 @@ class BeaconUser {
 
     try {
       users.insertOne(user);
-    } catch (MongoWriteException mwe) { // MongoWriteException thrown on non-unique username
+    } catch (MongoWriteException mwe) {
+      // inserted set to false on exception for non-unique username
       inserted = false;
     }
 
@@ -85,5 +89,52 @@ class BeaconUser {
     this.lastLocation = thisUser.get("lastLocation", Point.class);
 
     return thisUser.toJson();
+  }
+
+  // Data member accessor methods
+
+  public String getUserName() {
+    return this.username;
+  }
+
+  public ArrayList<String> getInterests() {
+    return this.interests;
+  }
+
+  public Point getLastLocation() {
+    return this.lastLocation;
+  }
+
+  // Data member mutator methods
+
+  public boolean changeUsername(String newName) {
+    boolean updated = true;
+
+    try {
+      users.updateOne(eq("username", this.username), set("username", newName));
+    } catch (MongoWriteException mwe) {
+      // updated set to false on exception for non-unique username
+      updated = false;
+    }
+
+    // if the update was successful, update the name in the current object
+    if (updated) {
+      this.username = newName;
+    }
+
+    return updated;
+  }
+
+  public void addInterest(String newInterest) {
+    users.updateOne(eq("username", this.username), push("interests", newInterest));
+  }
+
+  public void addInterests(ArrayList<String> newInterests) {
+    users.updateOne(eq("username", this.username), pushEach("interests", newInterests));
+  }
+
+  // close the user's connection to the database
+  public void closeConnection() {
+    mongoClient.close();
   }
 }
