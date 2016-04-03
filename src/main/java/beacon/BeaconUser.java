@@ -188,7 +188,7 @@ public class BeaconUser {
     UpdateResult ur = users.updateOne(eq("username", this.username), set("lastLocation", newLocation));
     boolean completed = (ur.getModifiedCount() > 0);
     if (completed) {
-      this.location = newLocation;
+      this.lastLocation = newLocation;
     }
     return completed;
   }

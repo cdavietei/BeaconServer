@@ -220,7 +220,7 @@ public class Beacon {
 
   public boolean changeTitle(String newTitle) {
     UpdateResult ur = beacons.updateOne(
-                              all(asList(eq("creator", this.creator),
+                              and(asList(eq("creator", this.creator),
                                          eq("endTime", this.endTime)
                               )),
                               set("title", newTitle)

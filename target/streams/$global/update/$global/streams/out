@@ -7,7 +7,7 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies for beacon#beacon_2.10;0.1-SNAPSHOT [compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies beacon#beacon_2.10;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.6 [compile->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving org.scala-lang#scala-library;2.10.6 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@7f10ec[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@f39760[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-lang#scala-library;2.10.6[0m
 [0m[[0mdebug[0m] [0m	found org.scala-lang#scala-library;2.10.6 in sbt-chain[0m
 [0m[[0mdebug[0m] [0m	[2.10.6] org.scala-lang#scala-library;2.10.6[0m
@@ -246,7 +246,7 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-reflect;2.10.6!scala-reflect.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#jline;2.10.6!jline.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.fusesource.jansi#jansi;1.4!jansi.jar[0m
-[0m[[0mdebug[0m] [0m:: resolution report :: resolve 468ms :: artifacts dl 19ms[0m
+[0m[[0mdebug[0m] [0m:: resolution report :: resolve 456ms :: artifacts dl 18ms[0m
 [0m[[0mdebug[0m] [0m	report for beacon#beacon_2.10;0.1-SNAPSHOT compile produced in C:\Users\Taylor\Programs\Beacon\BeaconServer\target\resolution-cache\reports\beacon-beacon_2.10-compile.xml[0m
 [0m[[0mdebug[0m] [0m	report for beacon#beacon_2.10;0.1-SNAPSHOT runtime produced in C:\Users\Taylor\Programs\Beacon\BeaconServer\target\resolution-cache\reports\beacon-beacon_2.10-runtime.xml[0m
 [0m[[0mdebug[0m] [0m	report for beacon#beacon_2.10;0.1-SNAPSHOT test produced in C:\Users\Taylor\Programs\Beacon\BeaconServer\target\resolution-cache\reports\beacon-beacon_2.10-test.xml[0m
@@ -260,5 +260,5 @@
 [0m[[0mdebug[0m] [0m	report for beacon#beacon_2.10;0.1-SNAPSHOT docs produced in C:\Users\Taylor\Programs\Beacon\BeaconServer\target\resolution-cache\reports\beacon-beacon_2.10-docs.xml[0m
 [0m[[0mdebug[0m] [0m	report for beacon#beacon_2.10;0.1-SNAPSHOT pom produced in C:\Users\Taylor\Programs\Beacon\BeaconServer\target\resolution-cache\reports\beacon-beacon_2.10-pom.xml[0m
 [0m[[0mdebug[0m] [0m	report for beacon#beacon_2.10;0.1-SNAPSHOT scala-tool produced in C:\Users\Taylor\Programs\Beacon\BeaconServer\target\resolution-cache\reports\beacon-beacon_2.10-scala-tool.xml[0m
-[0m[[0mdebug[0m] [0m	resolve done (468ms resolve - 19ms download)[0m
+[0m[[0mdebug[0m] [0m	resolve done (456ms resolve - 18ms download)[0m
 [0m[[0minfo[0m] [0mDone updating.[0m
