@@ -20,6 +20,7 @@ import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.result.UpdateResult;
 import com.mongodb.MongoClient;
+import com.mongodb.MongoClientURI;
 import com.mongodb.MongoWriteException;
 import org.bson.Document;
 
@@ -42,8 +43,9 @@ public class BeaconUser {
 
   // use when loading a user from the database
   // follow by calling getUserByName
-  public BeaconUser(String host, String dbName) {
-    mongoClient = new MongoClient(host);
+  public BeaconUser(String hostName, String dbName) {
+    MongoClientURI uri = new MongoClientURI(hostName);
+    mongoClient = new MongoClient(uri);
     db = mongoClient.getDatabase(dbName);
     users = db.getCollection("users");
     beacons = db.getCollection("beacons");
