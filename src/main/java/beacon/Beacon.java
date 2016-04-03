@@ -4,7 +4,9 @@ import static com.mongodb.client.model.Aggregates.limit;
 import static com.mongodb.client.model.Aggregates.match;
 import static com.mongodb.client.model.Filters.and;
 import static com.mongodb.client.model.Filters.eq;
+import static com.mongodb.client.model.Filters.geoWithinCenterSphere;
 import static com.mongodb.client.model.Filters.gt;
+import static com.mongodb.client.model.Filters.nin;
 import static java.util.Arrays.asList;
 
 import com.mongodb.MongoClient;
@@ -39,12 +41,22 @@ public class Beacon {
   int notifiedCount;
   ArrayList<String> notifiedUsers;
 
+  // empty constructor, creates database connection
+  // follow with findUniqueBeacon
+  public Beacon(MongoClient mc, MongoDatabase mdb) {
+    // connect instance to database
+    mongoClient = mc;
+    db = mdb;
+    users = db.getCollection("users");
+    beacons = db.getCollection("beacons");
+  }
+
   // use when creating a new beacon
   // follow by calling insert
-  public Beacon(MongoClient mg, MongoDatabase mdb, String authorName, String beaconTitle, double latCoord, double longCoord,
+  public Beacon(MongoClient mc, MongoDatabase mdb, String authorName, String beaconTitle, double latCoord, double longCoord,
                 Date start, Date end, double beaconRange, String beaconAddress, ArrayList<String> tagList) {
     // connect instance to database
-    mongoClient = mg;
+    mongoClient = mc;
     db = mdb;
     users = db.getCollection("users");
     beacons = db.getCollection("beacons");
@@ -62,6 +74,9 @@ public class Beacon {
     nu.add(creator);
     notifiedUsers = nu;
   }
+
+  // loads a unique beacon into the current Beacon instance
+  //
 
   // inserts the new user instance into MongoDB
   // returns true on successful insertion
@@ -109,5 +124,24 @@ public class Beacon {
     )));
 
     return (dr.getDeletedCount() > 0);
+  }
+
+  // input beacon's coordinates, proximity in miles, and list of users that have already attended
+  // returns JSON formatted String of the form { users: [ <users> ]}
+  // where <users> is a list of users within range of the beacon that have not yet been notified
+  public String findNearbyUsers(double latCoord, double longCoord, double distance, ArrayList<String> notified) {
+    // aggregate result Documents from users collection
+    AggregateIterable<Document> userAggregation = users.aggregate(asList(
+        // first aggregate by finding users within range of the beacon
+        match(geoWithinCenterSphere( "lastLocation",
+                                     longCoord,
+                                     latCoord,
+                                     distance / 3963.2 )),
+        // only match users that are not in the previously notified list
+        match(nin( "username", notified ))
+    ));
+
+    String result = JsonHelpers.iterableToJson("users", userAggregation);
+    return result;
   }
 }

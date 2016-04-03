@@ -103,8 +103,10 @@ public class BeaconUser {
       this.passwordSalt = thisUser.getString("passwordSalt");
       this.passwordHash = thisUser.getString("passwordHash");
       this.interests = thisUser.get("interests", ArrayList.class); // casts interests field to ArrayList
-      Position pos = thisUser.get("lastLocation.coordinates", Position.class);
-      this.lastLocation = new Point(pos);
+      // parse inner lastLocation Document to set this instance's lastLocation field
+      Document loc = (Document) thisUser.get("lastLocation");
+      ArrayList<Double> coords = loc.get("coordinates", ArrayList.class);
+      this.lastLocation = new Point(new Position(coords.get(0), coords.get(1)));
 
       userAsJson = thisUser.toJson();
     }

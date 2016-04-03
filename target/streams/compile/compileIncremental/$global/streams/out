@@ -17,9 +17,9 @@
 [0m[[0minfo[0m] [0mCompiling 6 Java sources to C:\Users\Taylor\Programs\Beacon\BeaconServer\target\scala-2.10\classes...[0m
 [0m[[0minfo[0m] [0mNote: C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\BeaconUser.java uses unchecked or unsafe operations.[0m
 [0m[[0minfo[0m] [0mNote: Recompile with -Xlint:unchecked for details.[0m
-[0m[[0mdebug[0m] [0mJava compilation took 2.001799271 s[0m
-[0m[[0mdebug[0m] [0mJava analysis took 0.653853706 s[0m
-[0m[[0mdebug[0m] [0mJava compile + analysis took 2.66485148 s[0m
+[0m[[0mdebug[0m] [0mJava compilation took 1.954808943 s[0m
+[0m[[0mdebug[0m] [0mJava analysis took 0.486398817 s[0m
+[0m[[0mdebug[0m] [0mJava compile + analysis took 2.450611538 s[0m
 [0m[[0mdebug[0m] [0m[naha] Invalidating C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\api\UpdateUser.java...[0m
 [0m[[0mdebug[0m] [0m[naha] Invalidating (transitively) by inheritance from C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\api\UpdateUser.java...[0m
 [0m[[0mdebug[0m] [0m[naha] Initial set of included nodes: Set(C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\api\UpdateUser.java)[0m
@@ -45,6 +45,15 @@
 [0m[[0mdebug[0m] [0m[naha] 	notify, wait, equals, main, notifyAll, <init>, Test, toString, getClass, hashCode.[0m
 [0m[[0mdebug[0m] [0m[naha] All member reference dependencies will be considered within this context.[0m
 [0m[[0mdebug[0m] [0m[naha] Name hashing optimization doesn't apply to non-Scala dependency: C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\Test.java[0m
+[0m[[0mdebug[0m] [0m[naha] Invalidating C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\Beacon.java...[0m
+[0m[[0mdebug[0m] [0m[naha] Invalidating (transitively) by inheritance from C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\Beacon.java...[0m
+[0m[[0mdebug[0m] [0m[naha] Initial set of included nodes: Set(C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\Beacon.java)[0m
+[0m[[0mdebug[0m] [0m[naha] Invalidated by transitive inheritance dependency: Set(C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\Beacon.java)[0m
+[0m[[0mdebug[0m] [0m[naha] The C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\Beacon.java source file has the following regular definitions changed:[0m
+[0m[[0mdebug[0m] [0m[naha] 	notify, notifiedUsers, wait, startTime, location, insert, equals, tags, users, mongoClient, db, findNearbyUsers, creator, notifyAll, endTime, <init>, range, beacons, address, toString, getClass, title, Beacon, deleteCurrentBeacon, notifiedCount, hashCode.[0m
+[0m[[0mdebug[0m] [0m[naha] All member reference dependencies will be considered within this context.[0m
+[0m[[0mdebug[0m] [0m[naha] Name hashing optimization doesn't apply to non-Scala dependency: C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\BeaconUser.java[0m
+[0m[[0mdebug[0m] [0m[naha] Name hashing optimization doesn't apply to non-Scala dependency: C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\Beacon.java[0m
 [0m[[0mdebug[0m] [0m[naha] Invalidating C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\JsonHelpers.java...[0m
 [0m[[0mdebug[0m] [0m[naha] Invalidating (transitively) by inheritance from C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\JsonHelpers.java...[0m
 [0m[[0mdebug[0m] [0m[naha] Initial set of included nodes: Set(C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\JsonHelpers.java)[0m
@@ -53,16 +62,8 @@
 [0m[[0mdebug[0m] [0m[naha] 	notify, wait, equals, notifyAll, <init>, JsonHelpers, toString, iterableToJson, getClass, hashCode.[0m
 [0m[[0mdebug[0m] [0m[naha] All member reference dependencies will be considered within this context.[0m
 [0m[[0mdebug[0m] [0m[naha] Name hashing optimization doesn't apply to non-Scala dependency: C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\BeaconUser.java[0m
-[0m[[0mdebug[0m] [0m[naha] Name hashing optimization doesn't apply to non-Scala dependency: C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\JsonHelpers.java[0m
-[0m[[0mdebug[0m] [0m[naha] Invalidating C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\Beacon.java...[0m
-[0m[[0mdebug[0m] [0m[naha] Invalidating (transitively) by inheritance from C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\Beacon.java...[0m
-[0m[[0mdebug[0m] [0m[naha] Initial set of included nodes: Set(C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\Beacon.java)[0m
-[0m[[0mdebug[0m] [0m[naha] Invalidated by transitive inheritance dependency: Set(C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\Beacon.java)[0m
-[0m[[0mdebug[0m] [0m[naha] The C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\Beacon.java source file has the following regular definitions changed:[0m
-[0m[[0mdebug[0m] [0m[naha] 	notify, notifiedUsers, wait, startTime, location, insert, equals, tags, users, mongoClient, db, creator, notifyAll, endTime, <init>, range, beacons, address, toString, getClass, title, Beacon, deleteCurrentBeacon, notifiedCount, hashCode.[0m
-[0m[[0mdebug[0m] [0m[naha] All member reference dependencies will be considered within this context.[0m
-[0m[[0mdebug[0m] [0m[naha] Name hashing optimization doesn't apply to non-Scala dependency: C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\BeaconUser.java[0m
 [0m[[0mdebug[0m] [0m[naha] Name hashing optimization doesn't apply to non-Scala dependency: C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\Beacon.java[0m
+[0m[[0mdebug[0m] [0m[naha] Name hashing optimization doesn't apply to non-Scala dependency: C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\JsonHelpers.java[0m
 [0m[[0mdebug[0m] [0m[naha] Invalidating C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\BeaconUser.java...[0m
 [0m[[0mdebug[0m] [0m[naha] Invalidating (transitively) by inheritance from C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\BeaconUser.java...[0m
 [0m[[0mdebug[0m] [0m[naha] Initial set of included nodes: Set(C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\BeaconUser.java)[0m
