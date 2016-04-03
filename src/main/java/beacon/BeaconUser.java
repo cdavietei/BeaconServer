@@ -57,6 +57,7 @@ public class BeaconUser {
     mongoClient = new MongoClient(host);
     db = mongoClient.getDatabase(dbName);
     users = db.getCollection("users");
+    beacons = db.getCollection("beacons");
 
     // initialize the fields for the user object
     username = name;
@@ -67,7 +68,7 @@ public class BeaconUser {
   }
 
   // inserts the new user instance into MongoDB
-  // returns true on successful insert
+  // returns true on successful insertion
   // returns false on unsuccessful insert (caused by non-unique username)
   public boolean insert() {
     boolean inserted = true;
