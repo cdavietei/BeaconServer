@@ -14,7 +14,7 @@ public class CreateBeacon extends HttpServlet
 {
     protected static String MONGO_HOST;
     protected static String DB_NAME;
-    protected static BeaconUser user;
+    protected BeaconUser user;
 
     protected String resp;
 
@@ -38,6 +38,9 @@ public class CreateBeacon extends HttpServlet
 
         String uid = request.getParameter("uid");
 
+        Date start, end;
+        start = new Date(System.currentTimeMillis());
+        end = new Date(System.currentTimeMillis()+(5*1000*60*60));
         if(uid != null)
         {
             String title = request.getParameter("title");
@@ -46,8 +49,8 @@ public class CreateBeacon extends HttpServlet
             double longCoord = Double.parseDouble(request.getParameter("long"));
             double range = Double.parseDouble(request.getParameter("range"));
 
-            Date start = new Date(Long.parseLong(request.getParameter("start")));
-            Date end = new Date(Long.parseLong(request.getParameter("end")));
+            start = new Date(Long.parseLong(request.getParameter("start"))*1000);
+            end = new Date(Long.parseLong(request.getParameter("end"))*1000);
 
             String[] tags = request.getParameterValues("tags");
             String[] address = getAddress(latCoord,longCoord);
