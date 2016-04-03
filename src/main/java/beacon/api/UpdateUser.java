@@ -16,11 +16,10 @@ public class UpdateUser extends HttpServlet
 
     public void init() throws ServletException
     {
-        user = new BeaconUser(MONGO_HOST,DB_NAME);
-        Paths.setUp();
+        MONGO_HOST = Enums.MONGO_HOST.toString();
+        DB_NAME = Enums.DB_NAME.toString();
 
-        MONGO_HOST = Paths.getHostName();
-        DB_NAME = Paths.getDBName();
+        user = new BeaconUser(MONGO_HOST,DB_NAME);
     }
 
     public void doGet(HttpServletRequest request,
