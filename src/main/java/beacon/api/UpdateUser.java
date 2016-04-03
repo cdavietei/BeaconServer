@@ -1,4 +1,7 @@
+package beacon.api;
+
 import beacon.*;
+import beacon.util.*;
 import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -8,12 +11,16 @@ import java.util.ArrayList;
 public class UpdateUser extends HttpServlet
 {
     protected BeaconUser user;
-    protected static final String MONGO_HOST = "localhost";
-    protected static final String DB_NAME = "beaconDB";
+    protected static String MONGO_HOST;
+    protected static String DB_NAME;
 
     public void init() throws ServletException
     {
         user = new BeaconUser(MONGO_HOST,DB_NAME);
+        Paths.setUp();
+
+        MONGO_HOST = Paths.getHostName();
+        DB_NAME = Paths.getDBName();
     }
 
     public void doGet(HttpServletRequest request,
@@ -28,7 +35,7 @@ public class UpdateUser extends HttpServlet
         {
             double latCoord = Double.parseDouble(request.getParameter("lat"));
             double longCoord = Double.parseDouble(request.getParameter("long"));
-            
+
             success = updateUser(uid, latCoord, longCoord);
         }
 
