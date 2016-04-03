@@ -12,6 +12,7 @@ import com.mongodb.client.model.geojson.Point;
 import com.mongodb.client.model.geojson.Position;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.result.DeleteResult;
 import org.bson.Document;
 
 import java.util.ArrayList;
@@ -38,11 +39,11 @@ public class Beacon {
 
   // use when creating a new beacon
   // follow by calling insert
-  public Beacon(String host, String dbName, String authorName, String beaconTitle, double latCoord, double longCoord,
+  public Beacon(MongoClient mg, MongoDatabase mdb, String authorName, String beaconTitle, double latCoord, double longCoord,
                 Date start, Date end, double beaconRange, String beaconAddress, ArrayList<String> tagList) {
     // connect instance to database
-    mongoClient = new MongoClient(host);
-    db = mongoClient.getDatabase(dbName);
+    mongoClient = mg;
+    db = mdb;
     users = db.getCollection("users");
     beacons = db.getCollection("beacons");
 
@@ -68,17 +69,14 @@ public class Beacon {
 
     // search for a beacon by the creator with an endTime greater than current time
     // limits users to one beacon at a time
-    AggregateIterable<Document> beaconAggregation = beacons.aggregate(asList(
-      // find beacons created by the user
-      match(eq("creator", this.creator)),
-      // match any ongoing or future beacons (endTime > currentTime)
-      match(gt("endTime", new Date())), // new Date instantiates to current time
-      // only requires one beacon to match criteria
-      limit(1)
-    ));
+    FindIterable<Document> fi = beacons.find(and(asList(
+      eq("creator", this.creator),
+      gt("endTime", new Date())
+    )))
+    .limit(1);
 
     // do not insert if a match is found
-    if (beaconAggregation.first() == null) {
+    if (fi.first() == null) {
       insert = false;
     }
 
@@ -97,5 +95,17 @@ public class Beacon {
     }
 
     return insert;
+  }
+
+  // remove the user's current beacon
+  // returns true for successful deletion
+  public boolean deleteCurrentBeacon() {
+    // delete the beacon by the creator with an endTime greater than current time
+    DeleteResult dr = beacons.deleteOne(and(asList(
+      eq("creator", this.creator),
+      gt("endTime", new Date())
+    )))
+
+    return (gr.getDeletedCount() > 0)
   }
 }

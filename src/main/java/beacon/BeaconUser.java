@@ -169,6 +169,18 @@ public class BeaconUser {
     return (ur.getModifiedCount() > 0);
   }
 
+  // Beacon creation method
+  // returns true on successful creation
+  public boolean placeBeacon(String title, double latCoord, double longCoord, Date start,
+                             Date end, double range, String address, ArrayList<String> tagList) {
+    // call the Beacon class constructor
+    Beacon newBeacon = Beacon(this.mongoClient, this.db, this.username, title, latCoord, longCoord,
+                              start, end, range, address, tagList);
+
+    boolean created = newBeacon.insert();
+    return created;
+  }
+
   // Beacon search methods
 
   // input max number of beacons, user's coordinates, and proximity in miles
