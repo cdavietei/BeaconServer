@@ -23,7 +23,7 @@ class Helpers {
       // remove the final, extra comma by taking substring of everything but last character
       returnList = returnList.substring(0, returnList.length() - 2);
     }
-    returnList += "]}"; // complete correct JSON format
+    returnList += "}]}"; // complete correct JSON format
 
     return returnList;
   }
