@@ -225,6 +225,15 @@ public class BeaconUser {
     return created;
   }
 
+  public boolean attendBeacon(Beacon beacon) {
+    boolean success = true;
+    // increment notified count and add user to the notified list
+    success = success && beacon.updateNotifiedCount(beacon.getNotifiedCount() + 1);
+    success = success && beacon.addOneNotified(this.username);
+
+    return success;
+  }
+
   // Beacon search methods
 
   // input max number of beacons, user's coordinates, and proximity in miles
