@@ -26,7 +26,7 @@ public class UpdateUser extends HttpServlet
                       HttpServletResponse response)
               throws ServletException, IOException
     {
-        response.setContentType("text/html");
+        response.setContentType("text/plain");
 
         boolean success = false;
         String uid = request.getParameter("uid");
@@ -40,7 +40,7 @@ public class UpdateUser extends HttpServlet
 
         PrintWriter out = response.getWriter();
 
-        out.println("<p>"+((success) ? "Success" : "Failure")+"</p>");
+        out.println(((success) ? "Success" : "Failure"));
         out.close();
     }
 
@@ -61,6 +61,7 @@ public class UpdateUser extends HttpServlet
             retval = user.updateLastLocation(latCoord,longCoord);
         else
         {
+            user.closeConnection();
             user = new BeaconUser(MONGO_HOST, DB_NAME,uid,"",
                     new ArrayList<String>(),latCoord,longCoord);
             retval = user.insert();
