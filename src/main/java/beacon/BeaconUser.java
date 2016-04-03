@@ -104,7 +104,7 @@ public class BeaconUser {
       this.passwordHash = thisUser.getString("passwordHash");
       this.interests = thisUser.get("interests", ArrayList.class); // casts interests field to ArrayList
       // parse inner lastLocation Document to set this instance's lastLocation field
-      Document loc = (Document) thisUser.get("lastLocation");
+      Document loc = thisUser.get("lastLocation", Document.class);
       ArrayList<Double> coords = loc.get("coordinates", ArrayList.class);
       this.lastLocation = new Point(new Position(coords.get(0), coords.get(1)));
 
@@ -149,22 +149,38 @@ public class BeaconUser {
 
   public boolean addInterest(String newInterest) {
     UpdateResult ur = users.updateOne(eq("username", this.username), addToSet("interests", newInterest));
-    return (ur.getModifiedCount() > 0);
+    boolean completed = (ur.getModifiedCount() > 0);
+    if (completed) {
+      this.interests.add(newInterest);
+    }
+    return completed;
   }
 
   public boolean addInterests(ArrayList<String> newInterests) {
     UpdateResult ur = users.updateOne(eq("username", this.username), addEachToSet("interests", newInterests));
-    return (ur.getModifiedCount() > 0);
+    boolean completed = (ur.getModifiedCount() > 0);
+    if (completed) {
+      this.interests.addAll(newInterests);
+    }
+    return completed;
   }
 
   public boolean removeInterest(String removeTarget) {
     UpdateResult ur = users.updateOne(eq("username", this.username), pull("interests", removeTarget));
-    return (ur.getModifiedCount() > 0);
+    boolean completed = (ur.getModifiedCount() > 0);
+    if (completed) {
+      this.interests.remove(removeTarget);
+    }
+    return completed;
   }
 
   public boolean removeInterests(ArrayList<String> removeTargets) {
     UpdateResult ur = users.updateOne(eq("username", this.username), pullAll("interests", removeTargets));
-    return (ur.getModifiedCount() > 0);
+    boolean completed = (ur.getModifiedCount() > 0);
+    if (completed) {
+      this.interests.removeAll(removeTargets);
+    }
+    return completed;
   }
 
   public boolean updateLastLocation(double latCoord, double longCoord) {
@@ -176,10 +192,10 @@ public class BeaconUser {
   // Beacon creation method
   // returns true on successful creation
   public boolean placeBeacon(String title, double latCoord, double longCoord, Date start,
-                             Date end, double range, String address, ArrayList<String> tagList) {
+                             Date end, double range, String placeName, String address, ArrayList<String> tagList) {
     // call the Beacon class constructor
-    Beacon newBeacon = new Beacon(this.mongoClient, this.db, this.username, title, latCoord, longCoord,
-                              start, end, range, address, tagList);
+    Beacon newBeacon = new Beacon(this.db, this.username, title, latCoord, longCoord,
+                              start, end, range, placeName, address, tagList);
 
     boolean created = newBeacon.insert();
     return created;

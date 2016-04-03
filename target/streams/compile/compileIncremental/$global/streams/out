@@ -15,11 +15,11 @@
 [0m[[0mdebug[0m] [0mAll initially invalidated sources: Set(C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\BeaconUser.java, C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\Test.java, C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\JsonHelpers.java, C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\Beacon.java, C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\api\UpdateUser.java, C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\util\Paths.java)[0m
 [0m[[0mdebug[0m] [0m[naha] Recompiling all 6 sources: invalidated sources (6) exceeded 50.0% of all sources[0m
 [0m[[0minfo[0m] [0mCompiling 6 Java sources to C:\Users\Taylor\Programs\Beacon\BeaconServer\target\scala-2.10\classes...[0m
-[0m[[0minfo[0m] [0mNote: C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\BeaconUser.java uses unchecked or unsafe operations.[0m
+[0m[[0minfo[0m] [0mNote: Some input files use unchecked or unsafe operations.[0m
 [0m[[0minfo[0m] [0mNote: Recompile with -Xlint:unchecked for details.[0m
-[0m[[0mdebug[0m] [0mJava compilation took 1.954808943 s[0m
-[0m[[0mdebug[0m] [0mJava analysis took 0.486398817 s[0m
-[0m[[0mdebug[0m] [0mJava compile + analysis took 2.450611538 s[0m
+[0m[[0mdebug[0m] [0mJava compilation took 1.914511439 s[0m
+[0m[[0mdebug[0m] [0mJava analysis took 0.574161456 s[0m
+[0m[[0mdebug[0m] [0mJava compile + analysis took 2.499578296 s[0m
 [0m[[0mdebug[0m] [0m[naha] Invalidating C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\api\UpdateUser.java...[0m
 [0m[[0mdebug[0m] [0m[naha] Invalidating (transitively) by inheritance from C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\api\UpdateUser.java...[0m
 [0m[[0mdebug[0m] [0m[naha] Initial set of included nodes: Set(C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\api\UpdateUser.java)[0m
@@ -50,7 +50,7 @@
 [0m[[0mdebug[0m] [0m[naha] Initial set of included nodes: Set(C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\Beacon.java)[0m
 [0m[[0mdebug[0m] [0m[naha] Invalidated by transitive inheritance dependency: Set(C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\Beacon.java)[0m
 [0m[[0mdebug[0m] [0m[naha] The C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\Beacon.java source file has the following regular definitions changed:[0m
-[0m[[0mdebug[0m] [0m[naha] 	notify, notifiedUsers, wait, startTime, location, insert, equals, tags, users, mongoClient, db, findNearbyUsers, creator, notifyAll, endTime, <init>, range, beacons, address, toString, getClass, title, Beacon, deleteCurrentBeacon, notifiedCount, hashCode.[0m
+[0m[[0mdebug[0m] [0m[naha] 	privateFindNearbyUsers, notify, getTags, notifiedUsers, wait, startTime, location, insert, getRange, equals, getAddress, placeName, tags, users, db, getTitle, getNotifiedCount, getEndTime, getCreator, getNotifiedUsers, findNearbyUsers, creator, notifyAll, getStartTime, findBeacon, endTime, <init>, range, beacons, getLocation, getPlaceName, address, toString, getClass, title, Beacon, deleteCurrentBeacon, notifiedCount, hashCode.[0m
 [0m[[0mdebug[0m] [0m[naha] All member reference dependencies will be considered within this context.[0m
 [0m[[0mdebug[0m] [0m[naha] Name hashing optimization doesn't apply to non-Scala dependency: C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\BeaconUser.java[0m
 [0m[[0mdebug[0m] [0m[naha] Name hashing optimization doesn't apply to non-Scala dependency: C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\Beacon.java[0m
