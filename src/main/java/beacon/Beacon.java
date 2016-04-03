@@ -2,12 +2,14 @@ package beacon;
 
 import static com.mongodb.client.model.Aggregates.limit;
 import static com.mongodb.client.model.Aggregates.match;
+import static com.mongodb.client.model.Filters.and;
 import static com.mongodb.client.model.Filters.eq;
 import static com.mongodb.client.model.Filters.gt;
 import static java.util.Arrays.asList;
 
 import com.mongodb.MongoClient;
 import com.mongodb.client.AggregateIterable;
+import com.mongodb.client.FindIterable;
 import com.mongodb.client.model.geojson.Point;
 import com.mongodb.client.model.geojson.Position;
 import com.mongodb.client.MongoCollection;
@@ -106,6 +108,6 @@ public class Beacon {
       gt("endTime", new Date())
     )));
 
-    return (gr.getDeletedCount() > 0);
+    return (dr.getDeletedCount() > 0);
   }
 }

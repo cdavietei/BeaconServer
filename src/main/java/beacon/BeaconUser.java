@@ -176,7 +176,7 @@ public class BeaconUser {
   public boolean placeBeacon(String title, double latCoord, double longCoord, Date start,
                              Date end, double range, String address, ArrayList<String> tagList) {
     // call the Beacon class constructor
-    Beacon newBeacon = Beacon(this.mongoClient, this.db, this.username, title, latCoord, longCoord,
+    Beacon newBeacon = new Beacon(this.mongoClient, this.db, this.username, title, latCoord, longCoord,
                               start, end, range, address, tagList);
 
     boolean created = newBeacon.insert();
