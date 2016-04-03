@@ -6,6 +6,7 @@ import static com.mongodb.client.model.Filters.and;
 import static com.mongodb.client.model.Filters.eq;
 import static com.mongodb.client.model.Filters.geoWithinCenterSphere;
 import static com.mongodb.client.model.Filters.gt;
+import static com.mongodb.client.model.Filters.lt;
 import static com.mongodb.client.model.Filters.nin;
 import static java.util.Arrays.asList;
 
@@ -126,22 +127,79 @@ public class Beacon {
     return (dr.getDeletedCount() > 0);
   }
 
+  // loads the beacon with the specified creator at the specified time
+  // the time can be any time within the duration of the beacon
+  // returns true if a beacon is found, false if not
+  public boolean findBeacon(String beaconCreator, Date dateTime) {
+    boolean found = false;
+
+    FindIterable<Document> fi = beacons.find(and(asList(
+      eq("creator", this.creator),
+      gt("endTime", dateTime),
+      lt("startTime", dateTime)
+    )))
+    .limit(1);
+
+    Document thisBeacon = fi.first();
+
+    // if found, load the information into the Beacon instance
+    if (thisBeacon != null) {
+      found = true;
+
+      this.creator = thisBeacon.getString("creator");
+      this.title = thisBeacon.getString("title");
+      // parse location document to get coordinates
+      Document loc = (Document) thisBeacon.get("location");
+      ArrayList<Double> coords = loc.get("coordinates", ArrayList.class);
+      this.location = new Point(new Position(coords.get(0), coords.get(1)));
+      this.startTime = thisBeacon.get("startTime", Date.class);
+      this.endTime = thisBeacon.get("endTime", Date.class);
+      this.range = thisBeacon.getDouble("range");
+      this.address = thisBeacon.getString("address");
+      this.notifiedCount = thisBeacon.getInteger("notifiedCount");
+      this.notifiedUsers = thisBeacon.get("notified", ArrayList.class);
+    }
+
+    return found;
+
+  }
+
   // input beacon's coordinates, proximity in miles, and list of users that have already attended
   // returns JSON formatted String of the form { users: [ <users> ]}
   // where <users> is a list of users within range of the beacon that have not yet been notified
-  public String findNearbyUsers(double latCoord, double longCoord, double distance, ArrayList<String> notified) {
+  public String findNearbyUsers() {
     // aggregate result Documents from users collection
     AggregateIterable<Document> userAggregation = users.aggregate(asList(
         // first aggregate by finding users within range of the beacon
         match(geoWithinCenterSphere( "lastLocation",
-                                     longCoord,
-                                     latCoord,
-                                     distance / 3963.2 )),
+                                     this.longCoord,
+                                     this.latCoord,
+                                     this.range / 3963.2 )),
         // only match users that are not in the previously notified list
-        match(nin( "username", notified ))
+        match(nin( "username", this.notifiedUsers ))
     ));
 
     String result = JsonHelpers.iterableToJson("users", userAggregation);
+    return result;
+  }
+
+  // private version of the nearbyUsers method
+  // input is the same as findNearbyUsers with the addition of selected ArrayList
+  // selected is a list of friends selected to receive notification about the beacon
+  // returns JSON formatted String of the form { users: [ <users> ]}
+  // where <users> is a list of users within range of the beacon that have not yet been notified
+  public String privateFindNearbyUsers(ArrayList<String> selected) {
+    // aggregate result Documents from users collection
+    AggregateIterable<Document> userAggregation = users.aggregate(asList(
+      // first match on the users specified in the selected list
+      match(in( "username", selected )),
+      // then find those close to beacon
+      match(geoWithinCenterSphere( "lastLocation", this.longCoord, this.latCoord, this.range / 3963.2)),
+      // only match users that have not yet been notified
+      match(nin( "username", this.notifiedUsers ))
+    ));
+
+    String result = iterableToJson("users", userAggregation);
     return result;
   }
 }
