@@ -104,8 +104,8 @@ public class Beacon {
     DeleteResult dr = beacons.deleteOne(and(asList(
       eq("creator", this.creator),
       gt("endTime", new Date())
-    )))
+    )));
 
-    return (gr.getDeletedCount() > 0)
+    return (gr.getDeletedCount() > 0);
   }
 }

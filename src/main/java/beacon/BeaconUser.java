@@ -24,6 +24,7 @@ import com.mongodb.client.result.UpdateResult;
 import org.bson.Document;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 
 public class BeaconUser {
@@ -102,7 +103,7 @@ public class BeaconUser {
       this.passwordSalt = thisUser.getString("passwordSalt");
       this.passwordHash = thisUser.getString("passwordHash");
       this.interests = thisUser.get("interests", ArrayList.class); // casts interests field to ArrayList
-      this.lastLocation = thisUser.get("lastLocation", Point.class);
+      this.lastLocation = thisUser.get("lastLocation", Position.class);
 
       userAsJson = thisUser.toJson();
     }
