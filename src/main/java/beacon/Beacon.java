@@ -37,6 +37,7 @@ public class Beacon {
   Date startTime;
   Date endTime;
   double range;
+  String placeName;
   String address;
   ArrayList<String> tags;
   int notifiedCount;
@@ -55,7 +56,7 @@ public class Beacon {
   // use when creating a new beacon
   // follow by calling insert
   public Beacon(MongoClient mc, MongoDatabase mdb, String authorName, String beaconTitle, double latCoord, double longCoord,
-                Date start, Date end, double beaconRange, String beaconAddress, ArrayList<String> tagList) {
+                Date start, Date end, double beaconRange, String pName, String beaconAddress, ArrayList<String> tagList) {
     // connect instance to database
     mongoClient = mc;
     db = mdb;
@@ -69,6 +70,7 @@ public class Beacon {
     startTime = start;
     endTime = end;
     range = beaconRange;
+    placeName = pName;
     address = beaconAddress;
     notifiedCount = 1; // creator is considered first notified
     ArrayList<String> nu = new ArrayList<String>();
@@ -105,6 +107,7 @@ public class Beacon {
                         .append("startTime", this.startTime)
                         .append("endTime", this.endTime)
                         .append("range", this.range)
+                        .append("placeName", this.placeName)
                         .append("address", this.address)
                         .append("notifiedCount", this.notifiedCount)
                         .append("notified", this.notifiedUsers);
@@ -155,6 +158,7 @@ public class Beacon {
       this.startTime = thisBeacon.get("startTime", Date.class);
       this.endTime = thisBeacon.get("endTime", Date.class);
       this.range = thisBeacon.getDouble("range");
+      this.placeName = thisBeacon.getString("placeName");
       this.address = thisBeacon.getString("address");
       this.notifiedCount = thisBeacon.getInteger("notifiedCount");
       this.notifiedUsers = thisBeacon.get("notified", ArrayList.class);
@@ -163,6 +167,54 @@ public class Beacon {
     return found;
 
   }
+
+  // Data member accessor methods
+
+  public String getCreator() {
+    return this.creator;
+  }
+
+  public String getTitle() {
+    return this.title;
+  }
+
+  public Point getLocation() {
+    return this.location;
+  }
+
+  public Date getStartTime() {
+    return this.startTime;
+  }
+
+  public Date getEndTime() {
+    return this.endTime;
+  }
+
+  public double getRange() {
+    return this.range;
+  }
+
+  public String getPlaceName() {
+    return this.placeName;
+  }
+
+  public String getAddress() {
+    return this.address;
+  }
+
+  public ArrayList<String> getTags() {
+    return this.tags;
+  }
+
+  public int getNotifiedCount() {
+    return this.notifiedCount;
+  }
+
+  public ArrayList<String> getNotifiedUsers() {
+    return this.notifiedUsers;
+  }
+
+  // User location methods
 
   // input beacon's coordinates, proximity in miles, and list of users that have already attended
   // returns JSON formatted String of the form { users: [ <users> ]}
