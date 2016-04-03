@@ -41,6 +41,7 @@ public class UpdateUser extends HttpServlet
         PrintWriter out = response.getWriter();
 
         out.println("<p>"+((success) ? "Success" : "Failure")+"</p>");
+        out.close();
     }
 
     /**

@@ -55,10 +55,15 @@ public class CreateBeacon extends HttpServlet
         PrintWriter out = response.getWriter();
         out.println("<p>"+((success) ? "Success" : "Failure")+"</p>");
 
+        out.close();
+
     }
 
     public String[] getAddress(double latCoord, double longCoord)
     {
+        String[] retval = {"",""};
+        try
+        {
             String client = "X4Z021O0Q1QNG3BRTNAZBG5WWZPHQEXYA3NZW40AHJ1JSQJM";
             String secret = "OP344JWOZIAQU5YYEDZOEBYDBEBKRJMFY1BQWUO3KC4ZEDHM";
             String base = "https://api.foursquare.com/v2/venues/search";
@@ -79,9 +84,17 @@ public class CreateBeacon extends HttpServlet
             Document location =  info.get("location",Document.class);
             String address = location.get("address",String.class);
 
-            String[] retval = {name,address};
+            retval = new String[2];
+            retval[0] = name;
+            retval[1] = address;
+        }
+        catch(Exception e)
+        {
+            System.out.println(e.getLocalizedMessage());
+        }
 
-            return retval;
+        return retval;
+
     }
 
 
