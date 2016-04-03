@@ -103,7 +103,7 @@ public class Beacon {
     .limit(1);
 
     // do not insert if a match is found
-    if (fi.first() == null) {
+    if (fi.first() != null) {
       insert = false;
     }
 
