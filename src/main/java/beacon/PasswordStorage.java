@@ -9,25 +9,6 @@ import java.security.spec.InvalidKeySpecException;
 import javax.xml.bind.DatatypeConverter;
 
 public class PasswordStorage {
-    public static void main(String[] args) {
-      // first argument is password to hash
-      String password = args[0];
-      String hash = null;
-      System.out.println("The password is: " + password);
-      try {
-        hash = createHash(password);
-      } catch (Exception e) {
-        System.out.println("Hash failed");
-      }
-      System.out.println("The hashed password is: " + hash);
-
-      try {
-        System.out.println("Match?: " + verifyPassword(password, hash));
-      } catch (Exception e) {
-        System.out.println("Verification failed");
-      }
-    }
-
     @SuppressWarnings("serial")
     static public class InvalidHashException extends Exception {
         public InvalidHashException(String message) {

@@ -36,7 +36,6 @@ public class BeaconUser {
 
   // BeaconUser fields
   public String username;
-  private String passwordSalt;
   private String passwordHash;
   public ArrayList<String> interests;
   public Point lastLocation;
@@ -52,7 +51,7 @@ public class BeaconUser {
 
   // use when creating a new user
   // follow by calling insert
-  public BeaconUser(String host, String dbName, String name, String pword,
+  public BeaconUser(String host, String dbName, String name, String password,
                     ArrayList<String> userInterests, double latCoord, double longCoord) {
     // connect instance to the database
     mongoClient = new MongoClient(host);
@@ -62,7 +61,9 @@ public class BeaconUser {
 
     // initialize the fields for the user object
     username = name;
-    // ***** handle password hashing ******
+    try {
+      passwordHash = PasswordStorage.createHash(password);
+    } catch (Exception e) { passwordHash = ""; } // empty passwordHash will be rejected on insert
     interests = userInterests;
     // create a location Point: longitude first - required for database query on GeoJSON
     lastLocation = new Point(new Position(longCoord, latCoord));
@@ -75,19 +76,39 @@ public class BeaconUser {
     boolean inserted = true;
 
     Document user = new Document("username", this.username)
-                    .append("passwordSalt", this.passwordSalt)
                     .append("passwordHash", this.passwordHash)
                     .append("interests", this.interests) // ArrayList converts to JSON array
                     .append("lastLocation", this.lastLocation); // Point coverts to GeoJSON
 
-    try {
-      users.insertOne(user);
-    } catch (MongoWriteException mwe) {
-      // inserted set to false on exception for non-unique username
-      inserted = false;
-    }
+    // attempt insert only if hash is not empty
+    if (!this.passwordHash.equals("")) {
+      try {
+        users.insertOne(user);
+      } catch (MongoWriteException mwe) {
+        // inserted set to false on exception for non-unique username
+        inserted = false;
+      }
+    } else { inserted = false; }
 
     return inserted;
+  }
+
+  public boolean authenticateUser(String password) {
+    boolean authenticated = false;
+    String passHash = "";
+
+    // get the password hash from the database
+    FindIterable<Document> userIterable = users.find(eq("username", this.username));
+    Document thisUser = userIterable.first();
+    if (thisUser != null) {
+      passHash = thisUser.getString("passwordHash");
+    }
+
+    try {
+      authenticated = PasswordStorage.verifyPassword(password, passHash);
+    } catch (Exception e) { authenticated = false; }
+
+    return authenticated;
   }
 
   // loads user instance from database into constructed BeaconUser instance
@@ -100,7 +121,6 @@ public class BeaconUser {
 
     if (thisUser != null) {
       this.username = thisUser.getString("username");
-      this.passwordSalt = thisUser.getString("passwordSalt");
       this.passwordHash = thisUser.getString("passwordHash");
       this.interests = thisUser.get("interests", ArrayList.class); // casts interests field to ArrayList
       // parse inner lastLocation Document to set this instance's lastLocation field
