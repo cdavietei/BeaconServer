@@ -79,6 +79,7 @@ public class Beacon {
     range = beaconRange;
     placeName = pName;
     address = beaconAddress;
+    tags = tagList;
     notifiedCount = 1; // creator is considered first notified
     ArrayList<String> nu = new ArrayList<String>();
     nu.add(creator);
@@ -116,6 +117,7 @@ public class Beacon {
                         .append("range", this.range)
                         .append("placeName", this.placeName)
                         .append("address", this.address)
+                        .append("tags", this.tags)
                         .append("notifiedCount", this.notifiedCount)
                         .append("notified", this.notified);
 

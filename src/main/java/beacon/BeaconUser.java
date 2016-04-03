@@ -93,7 +93,7 @@ public class BeaconUser {
     return inserted;
   }
 
-  public boolean authenticateUser(String password) {
+  public boolean authenticate(String password) {
     boolean authenticated = false;
     String passHash = "";
 
@@ -103,6 +103,7 @@ public class BeaconUser {
     if (thisUser != null) {
       passHash = thisUser.getString("passwordHash");
     }
+    System.out.println(passHash);
 
     try {
       authenticated = PasswordStorage.verifyPassword(password, passHash);

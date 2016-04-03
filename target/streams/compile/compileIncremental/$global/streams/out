@@ -16,32 +16,9 @@
 [0m[[0minfo[0m] [0mCompiling 1 Java source to C:\Users\Taylor\Programs\Beacon\BeaconServer\target\scala-2.10\classes...[0m
 [0m[[0minfo[0m] [0mNote: C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\BeaconUser.java uses unchecked or unsafe operations.[0m
 [0m[[0minfo[0m] [0mNote: Recompile with -Xlint:unchecked for details.[0m
-[0m[[0mdebug[0m] [0mJava compilation took 1.104618306 s[0m
-[0m[[0mdebug[0m] [0mJava analysis took 0.194026707 s[0m
-[0m[[0mdebug[0m] [0mJava compile + analysis took 1.31175934 s[0m
-[0m[[0mdebug[0m] [0m[naha] Invalidating C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\BeaconUser.java...[0m
-[0m[[0mdebug[0m] [0m[naha] Invalidating (transitively) by inheritance from C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\BeaconUser.java...[0m
-[0m[[0mdebug[0m] [0m[naha] Initial set of included nodes: Set(C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\BeaconUser.java)[0m
-[0m[[0mdebug[0m] [0m[naha] Invalidated by transitive inheritance dependency: Set(C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\BeaconUser.java)[0m
-[0m[[0mdebug[0m] [0m[naha] The C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\BeaconUser.java source file has the following regular definitions changed:[0m
-[0m[[0mdebug[0m] [0m[naha] 	attendBeacon.[0m
-[0m[[0mdebug[0m] [0m[naha] All member reference dependencies will be considered within this context.[0m
-[0m[[0mdebug[0m] [0m[naha] Name hashing optimization doesn't apply to non-Scala dependency: C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\BeaconUser.java[0m
-[0m[[0mdebug[0m] [0m[naha] Name hashing optimization doesn't apply to non-Scala dependency: C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\Test.java[0m
-[0m[[0mdebug[0m] [0m[naha] Name hashing optimization doesn't apply to non-Scala dependency: C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\api\CreateBeacon.java[0m
-[0m[[0mdebug[0m] [0m[naha] Name hashing optimization doesn't apply to non-Scala dependency: C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\api\UpdateUser.java[0m
-[0m[[0mdebug[0m] [0m[naha] New invalidations:[0m
-[0m[[0mdebug[0m] [0m[naha] 	Set(C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\Test.java, C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\api\CreateBeacon.java, C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\api\UpdateUser.java)[0m
-[0m[[0mdebug[0m] [0m[naha] Initial set of included nodes: Set(C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\Test.java, C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\api\CreateBeacon.java, C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\api\UpdateUser.java)[0m
-[0m[[0mdebug[0m] [0m[naha] Previously invalidated, but (transitively) depend on new invalidations:[0m
-[0m[[0mdebug[0m] [0m[naha] 	Set()[0m
-[0m[[0mdebug[0m] [0m[naha] All newly invalidated sources after taking into account (previously) recompiled sources:Set(C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\Test.java, C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\api\CreateBeacon.java, C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\api\UpdateUser.java)[0m
-[0m[[0minfo[0m] [0mCompiling 3 Java sources to C:\Users\Taylor\Programs\Beacon\BeaconServer\target\scala-2.10\classes...[0m
-[0m[[0minfo[0m] [0mNote: C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\api\CreateBeacon.java uses unchecked or unsafe operations.[0m
-[0m[[0minfo[0m] [0mNote: Recompile with -Xlint:unchecked for details.[0m
-[0m[[0mdebug[0m] [0mJava compilation took 0.994420565 s[0m
-[0m[[0mdebug[0m] [0mJava analysis took 0.052162784 s[0m
-[0m[[0mdebug[0m] [0mJava compile + analysis took 1.051861567 s[0m
+[0m[[0mdebug[0m] [0mJava compilation took 0.993658821 s[0m
+[0m[[0mdebug[0m] [0mJava analysis took 0.109060256 s[0m
+[0m[[0mdebug[0m] [0mJava compile + analysis took 1.110095104 s[0m
 [0m[[0mdebug[0m] [0m[naha] New invalidations:[0m
 [0m[[0mdebug[0m] [0m[naha] 	Set()[0m
 [0m[[0mdebug[0m] [0m[naha] Initial set of included nodes: Set()[0m
