@@ -103,7 +103,6 @@ public class BeaconUser {
     if (thisUser != null) {
       passHash = thisUser.getString("passwordHash");
     }
-    System.out.println(passHash);
 
     try {
       authenticated = PasswordStorage.verifyPassword(password, passHash);
