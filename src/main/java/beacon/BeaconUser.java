@@ -186,7 +186,11 @@ public class BeaconUser {
   public boolean updateLastLocation(double latCoord, double longCoord) {
     Point newLocation = new Point(new Position(longCoord, latCoord));
     UpdateResult ur = users.updateOne(eq("username", this.username), set("lastLocation", newLocation));
-    return (ur.getModifiedCount() > 0);
+    boolean completed = (ur.getModifiedCount() > 0);
+    if (completed) {
+      this.location = newLocation;
+    }
+    return completed;
   }
 
   // Beacon creation method

@@ -9,6 +9,7 @@ import static com.mongodb.client.model.Filters.gt;
 import static com.mongodb.client.model.Filters.in;
 import static com.mongodb.client.model.Filters.lt;
 import static com.mongodb.client.model.Filters.nin;
+import static com.mongodb.client.model.Updates.set;
 import static java.util.Arrays.asList;
 
 import com.mongodb.client.AggregateIterable;
@@ -18,6 +19,7 @@ import com.mongodb.client.model.geojson.Position;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.result.DeleteResult;
+import com.mongodb.client.result.UpdateResult;
 import org.bson.Document;
 
 import java.util.ArrayList;
@@ -217,7 +219,17 @@ public class Beacon {
   // Data member mutator methods
 
   public boolean changeTitle(String newTitle) {
-
+    UpdateResult ur = beacons.updateOne(
+                              all(asList(eq("creator", this.creator),
+                                         eq("endTime", this.endTime)
+                              )),
+                              set("title", newTitle)
+    );
+    boolean completed = (ur.getModifiedCount() > 0);
+    if (completed) {
+      this.title = newTitle;
+    }
+    return completed;
   }
 
   // User location methods
