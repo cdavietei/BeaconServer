@@ -6,7 +6,7 @@ import org.bson.Document;
 import java.util.ArrayList;
 import java.util.List;
 
-class JsonHelpers {
+class Helpers {
   // returns a JSON formatted String in the form { <name> : [<content>] }
   // where <content> is the list of Documents in the iterable parameter also in JSON format
   public static String iterableToJson(String name, MongoIterable<Document> iterable) {

@@ -1,25 +1,25 @@
 [0m[[0mdebug[0m] [0m[naha] [0m
 [0m[[0mdebug[0m] [0m[naha] Initial source changes: [0m
 [0m[[0mdebug[0m] [0m[naha] 	removed:Set()[0m
-[0m[[0mdebug[0m] [0m[naha] 	added: Set(C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\BeaconUser.java, C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\Test.java, C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\JsonHelpers.java, C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\Beacon.java, C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\api\UpdateUser.java, C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\util\Paths.java)[0m
+[0m[[0mdebug[0m] [0m[naha] 	added: Set(C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\BeaconUser.java, C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\Test.java, C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\util\Enums.java, C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\api\CreateBeacon.java, C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\Beacon.java, C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\api\UpdateUser.java, C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\util\Paths.java, C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\Helpers.java)[0m
 [0m[[0mdebug[0m] [0m[naha] 	modified: Set()[0m
 [0m[[0mdebug[0m] [0m[naha] Invalidated products: Set()[0m
 [0m[[0mdebug[0m] [0m[naha] External API changes: API Changes: Set()[0m
 [0m[[0mdebug[0m] [0m[naha] Modified binary dependencies: Set()[0m
-[0m[[0mdebug[0m] [0m[naha] Initial directly invalidated sources: Set(C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\BeaconUser.java, C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\Test.java, C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\JsonHelpers.java, C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\Beacon.java, C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\api\UpdateUser.java, C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\util\Paths.java)[0m
+[0m[[0mdebug[0m] [0m[naha] Initial directly invalidated sources: Set(C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\BeaconUser.java, C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\Test.java, C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\util\Enums.java, C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\api\CreateBeacon.java, C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\Beacon.java, C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\api\UpdateUser.java, C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\util\Paths.java, C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\Helpers.java)[0m
 [0m[[0mdebug[0m] [0m[naha] [0m
 [0m[[0mdebug[0m] [0m[naha] Sources indirectly invalidated by:[0m
 [0m[[0mdebug[0m] [0m[naha] 	product: Set()[0m
 [0m[[0mdebug[0m] [0m[naha] 	binary dep: Set()[0m
 [0m[[0mdebug[0m] [0m[naha] 	external source: Set()[0m
-[0m[[0mdebug[0m] [0mAll initially invalidated sources: Set(C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\BeaconUser.java, C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\Test.java, C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\JsonHelpers.java, C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\Beacon.java, C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\api\UpdateUser.java, C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\util\Paths.java)[0m
-[0m[[0mdebug[0m] [0m[naha] Recompiling all 6 sources: invalidated sources (6) exceeded 50.0% of all sources[0m
-[0m[[0minfo[0m] [0mCompiling 6 Java sources to C:\Users\Taylor\Programs\Beacon\BeaconServer\target\scala-2.10\classes...[0m
+[0m[[0mdebug[0m] [0mAll initially invalidated sources: Set(C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\BeaconUser.java, C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\Test.java, C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\util\Enums.java, C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\api\CreateBeacon.java, C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\Beacon.java, C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\api\UpdateUser.java, C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\util\Paths.java, C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\Helpers.java)[0m
+[0m[[0mdebug[0m] [0m[naha] Recompiling all 8 sources: invalidated sources (8) exceeded 50.0% of all sources[0m
+[0m[[0minfo[0m] [0mCompiling 8 Java sources to C:\Users\Taylor\Programs\Beacon\BeaconServer\target\scala-2.10\classes...[0m
 [0m[[0minfo[0m] [0mNote: Some input files use unchecked or unsafe operations.[0m
 [0m[[0minfo[0m] [0mNote: Recompile with -Xlint:unchecked for details.[0m
-[0m[[0mdebug[0m] [0mJava compilation took 2.000099067 s[0m
-[0m[[0mdebug[0m] [0mJava analysis took 0.484075651 s[0m
-[0m[[0mdebug[0m] [0mJava compile + analysis took 2.492212085 s[0m
+[0m[[0mdebug[0m] [0mJava compilation took 1.558266114 s[0m
+[0m[[0mdebug[0m] [0mJava analysis took 0.340877894 s[0m
+[0m[[0mdebug[0m] [0mJava compile + analysis took 1.904798859 s[0m
 [0m[[0mdebug[0m] [0m[naha] Invalidating C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\api\UpdateUser.java...[0m
 [0m[[0mdebug[0m] [0m[naha] Invalidating (transitively) by inheritance from C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\api\UpdateUser.java...[0m
 [0m[[0mdebug[0m] [0m[naha] Initial set of included nodes: Set(C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\api\UpdateUser.java)[0m
@@ -36,7 +36,16 @@
 [0m[[0mdebug[0m] [0m[naha] 	notify, setUp, wait, HOST_NAME, equals, DB_NAME, paths, notifyAll, <init>, toString, getClass, Paths, getDBName, getHostName, hashCode.[0m
 [0m[[0mdebug[0m] [0m[naha] All member reference dependencies will be considered within this context.[0m
 [0m[[0mdebug[0m] [0m[naha] Name hashing optimization doesn't apply to non-Scala dependency: C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\util\Paths.java[0m
-[0m[[0mdebug[0m] [0m[naha] Name hashing optimization doesn't apply to non-Scala dependency: C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\api\UpdateUser.java[0m
+[0m[[0mdebug[0m] [0m[naha] Invalidating C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\Helpers.java...[0m
+[0m[[0mdebug[0m] [0m[naha] Invalidating (transitively) by inheritance from C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\Helpers.java...[0m
+[0m[[0mdebug[0m] [0m[naha] Initial set of included nodes: Set(C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\Helpers.java)[0m
+[0m[[0mdebug[0m] [0m[naha] Invalidated by transitive inheritance dependency: Set(C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\Helpers.java)[0m
+[0m[[0mdebug[0m] [0m[naha] The C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\Helpers.java source file has the following regular definitions changed:[0m
+[0m[[0mdebug[0m] [0m[naha] 	notify, wait, equals, notifyAll, <init>, toString, iterableToJson, getClass, hashCode, Helpers.[0m
+[0m[[0mdebug[0m] [0m[naha] All member reference dependencies will be considered within this context.[0m
+[0m[[0mdebug[0m] [0m[naha] Name hashing optimization doesn't apply to non-Scala dependency: C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\BeaconUser.java[0m
+[0m[[0mdebug[0m] [0m[naha] Name hashing optimization doesn't apply to non-Scala dependency: C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\Beacon.java[0m
+[0m[[0mdebug[0m] [0m[naha] Name hashing optimization doesn't apply to non-Scala dependency: C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\Helpers.java[0m
 [0m[[0mdebug[0m] [0m[naha] Invalidating C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\Test.java...[0m
 [0m[[0mdebug[0m] [0m[naha] Invalidating (transitively) by inheritance from C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\Test.java...[0m
 [0m[[0mdebug[0m] [0m[naha] Initial set of included nodes: Set(C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\Test.java)[0m
@@ -45,25 +54,33 @@
 [0m[[0mdebug[0m] [0m[naha] 	notify, wait, equals, main, notifyAll, <init>, Test, toString, getClass, hashCode.[0m
 [0m[[0mdebug[0m] [0m[naha] All member reference dependencies will be considered within this context.[0m
 [0m[[0mdebug[0m] [0m[naha] Name hashing optimization doesn't apply to non-Scala dependency: C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\Test.java[0m
-[0m[[0mdebug[0m] [0m[naha] Invalidating C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\JsonHelpers.java...[0m
-[0m[[0mdebug[0m] [0m[naha] Invalidating (transitively) by inheritance from C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\JsonHelpers.java...[0m
-[0m[[0mdebug[0m] [0m[naha] Initial set of included nodes: Set(C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\JsonHelpers.java)[0m
-[0m[[0mdebug[0m] [0m[naha] Invalidated by transitive inheritance dependency: Set(C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\JsonHelpers.java)[0m
-[0m[[0mdebug[0m] [0m[naha] The C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\JsonHelpers.java source file has the following regular definitions changed:[0m
-[0m[[0mdebug[0m] [0m[naha] 	notify, wait, equals, notifyAll, <init>, JsonHelpers, toString, iterableToJson, getClass, hashCode.[0m
-[0m[[0mdebug[0m] [0m[naha] All member reference dependencies will be considered within this context.[0m
-[0m[[0mdebug[0m] [0m[naha] Name hashing optimization doesn't apply to non-Scala dependency: C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\BeaconUser.java[0m
-[0m[[0mdebug[0m] [0m[naha] Name hashing optimization doesn't apply to non-Scala dependency: C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\Beacon.java[0m
-[0m[[0mdebug[0m] [0m[naha] Name hashing optimization doesn't apply to non-Scala dependency: C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\JsonHelpers.java[0m
 [0m[[0mdebug[0m] [0m[naha] Invalidating C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\Beacon.java...[0m
 [0m[[0mdebug[0m] [0m[naha] Invalidating (transitively) by inheritance from C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\Beacon.java...[0m
 [0m[[0mdebug[0m] [0m[naha] Initial set of included nodes: Set(C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\Beacon.java)[0m
 [0m[[0mdebug[0m] [0m[naha] Invalidated by transitive inheritance dependency: Set(C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\Beacon.java)[0m
 [0m[[0mdebug[0m] [0m[naha] The C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\Beacon.java source file has the following regular definitions changed:[0m
-[0m[[0mdebug[0m] [0m[naha] 	privateFindNearbyUsers, notify, getTags, notifiedUsers, wait, startTime, location, insert, getRange, equals, getAddress, placeName, tags, users, db, getTitle, getNotifiedCount, getEndTime, getCreator, getNotifiedUsers, findNearbyUsers, creator, notifyAll, getStartTime, findBeacon, endTime, <init>, range, beacons, getLocation, getPlaceName, address, toString, getClass, title, Beacon, deleteCurrentBeacon, notifiedCount, changeTitle, hashCode.[0m
+[0m[[0mdebug[0m] [0m[naha] 	privateFindNearbyUsers, notify, getTags, addTag, wait, startTime, location, insert, getRange, equals, updatePlaceName, getAddress, placeName, tags, updateRange, users, db, getTitle, getNotifiedCount, updateTitle, getEndTime, updateEndTime, getCreator, getNotifiedUsers, findNearbyUsers, creator, notifyAll, removeTag, updateLocation, updateStartTime, getStartTime, findBeacon, endTime, <init>, addOneNotified, notified, range, beacons, updateBeaconField, getLocation, getPlaceName, address, toString, addTags, getClass, title, updateNotifiedCount, updateAddress, Beacon, deleteCurrentBeacon, notifiedCount, addManyNotified, removeTags, hashCode.[0m
 [0m[[0mdebug[0m] [0m[naha] All member reference dependencies will be considered within this context.[0m
 [0m[[0mdebug[0m] [0m[naha] Name hashing optimization doesn't apply to non-Scala dependency: C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\BeaconUser.java[0m
 [0m[[0mdebug[0m] [0m[naha] Name hashing optimization doesn't apply to non-Scala dependency: C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\Beacon.java[0m
+[0m[[0mdebug[0m] [0m[naha] Invalidating C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\util\Enums.java...[0m
+[0m[[0mdebug[0m] [0m[naha] Invalidating (transitively) by inheritance from C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\util\Enums.java...[0m
+[0m[[0mdebug[0m] [0m[naha] Initial set of included nodes: Set(C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\util\Enums.java)[0m
+[0m[[0mdebug[0m] [0m[naha] Invalidated by transitive inheritance dependency: Set(C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\util\Enums.java)[0m
+[0m[[0mdebug[0m] [0m[naha] The C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\util\Enums.java source file has the following regular definitions changed:[0m
+[0m[[0mdebug[0m] [0m[naha] 	notify, name, wait, valueOf, equals, getDeclaringClass, DB_NAME, Enums, MONGO_HOST, notifyAll, compareTo, ordinal, values, toString, getClass, hashCode.[0m
+[0m[[0mdebug[0m] [0m[naha] All member reference dependencies will be considered within this context.[0m
+[0m[[0mdebug[0m] [0m[naha] Name hashing optimization doesn't apply to non-Scala dependency: C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\api\CreateBeacon.java[0m
+[0m[[0mdebug[0m] [0m[naha] Name hashing optimization doesn't apply to non-Scala dependency: C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\util\Enums.java[0m
+[0m[[0mdebug[0m] [0m[naha] Name hashing optimization doesn't apply to non-Scala dependency: C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\api\UpdateUser.java[0m
+[0m[[0mdebug[0m] [0m[naha] Invalidating C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\api\CreateBeacon.java...[0m
+[0m[[0mdebug[0m] [0m[naha] Invalidating (transitively) by inheritance from C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\api\CreateBeacon.java...[0m
+[0m[[0mdebug[0m] [0m[naha] Initial set of included nodes: Set(C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\api\CreateBeacon.java)[0m
+[0m[[0mdebug[0m] [0m[naha] Invalidated by transitive inheritance dependency: Set(C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\api\CreateBeacon.java)[0m
+[0m[[0mdebug[0m] [0m[naha] The C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\api\CreateBeacon.java source file has the following regular definitions changed:[0m
+[0m[[0mdebug[0m] [0m[naha] 	notify, wait, equals, getAddress, DB_NAME, getServletContext, MONGO_HOST, service, notifyAll, convertStreamToString, getInitParameter, getServletInfo, <init>, destroy, getServletName, doGet, toString, getClass, getInitParameterNames, getServletConfig, init, user, CreateBeacon, log, hashCode.[0m
+[0m[[0mdebug[0m] [0m[naha] All member reference dependencies will be considered within this context.[0m
+[0m[[0mdebug[0m] [0m[naha] Name hashing optimization doesn't apply to non-Scala dependency: C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\api\CreateBeacon.java[0m
 [0m[[0mdebug[0m] [0m[naha] Invalidating C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\BeaconUser.java...[0m
 [0m[[0mdebug[0m] [0m[naha] Invalidating (transitively) by inheritance from C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\BeaconUser.java...[0m
 [0m[[0mdebug[0m] [0m[naha] Initial set of included nodes: Set(C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\BeaconUser.java)[0m
@@ -73,6 +90,7 @@
 [0m[[0mdebug[0m] [0m[naha] All member reference dependencies will be considered within this context.[0m
 [0m[[0mdebug[0m] [0m[naha] Name hashing optimization doesn't apply to non-Scala dependency: C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\Test.java[0m
 [0m[[0mdebug[0m] [0m[naha] Name hashing optimization doesn't apply to non-Scala dependency: C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\BeaconUser.java[0m
+[0m[[0mdebug[0m] [0m[naha] Name hashing optimization doesn't apply to non-Scala dependency: C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\api\CreateBeacon.java[0m
 [0m[[0mdebug[0m] [0m[naha] Name hashing optimization doesn't apply to non-Scala dependency: C:\Users\Taylor\Programs\Beacon\BeaconServer\src\main\java\beacon\api\UpdateUser.java[0m
 [0m[[0mdebug[0m] [0m[naha] New invalidations:[0m
 [0m[[0mdebug[0m] [0m[naha] 	Set()[0m

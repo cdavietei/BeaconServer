@@ -12,8 +12,6 @@ import static com.mongodb.client.model.Updates.pullAll;
 import static com.mongodb.client.model.Updates.set;
 import static java.util.Arrays.asList;
 
-import com.mongodb.MongoClient;
-import com.mongodb.MongoWriteException;
 import com.mongodb.client.AggregateIterable;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.model.geojson.Point;
@@ -21,6 +19,8 @@ import com.mongodb.client.model.geojson.Position;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.result.UpdateResult;
+import com.mongodb.MongoClient;
+import com.mongodb.MongoWriteException;
 import org.bson.Document;
 
 import java.util.ArrayList;
@@ -221,7 +221,7 @@ public class BeaconUser {
                                                    ))
                                                    .limit(max);
 
-    String result = JsonHelpers.iterableToJson("beacons", iterable);
+    String result = Helpers.iterableToJson("beacons", iterable);
     return result;
   }
 
@@ -236,7 +236,7 @@ public class BeaconUser {
       limit(max)
     ));
 
-    String result = JsonHelpers.iterableToJson("beacons", beaconAggregation);
+    String result = Helpers.iterableToJson("beacons", beaconAggregation);
     return result;
   }
 

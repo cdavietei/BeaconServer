@@ -9,6 +9,10 @@ import static com.mongodb.client.model.Filters.gt;
 import static com.mongodb.client.model.Filters.in;
 import static com.mongodb.client.model.Filters.lt;
 import static com.mongodb.client.model.Filters.nin;
+import static com.mongodb.client.model.Updates.addEachToSet;
+import static com.mongodb.client.model.Updates.addToSet;
+import static com.mongodb.client.model.Updates.pull;
+import static com.mongodb.client.model.Updates.pullAll;
 import static com.mongodb.client.model.Updates.set;
 import static java.util.Arrays.asList;
 
@@ -20,6 +24,7 @@ import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.result.DeleteResult;
 import com.mongodb.client.result.UpdateResult;
+import com.mongodb.MongoWriteException;
 import org.bson.Document;
 
 import java.util.ArrayList;
@@ -38,12 +43,12 @@ public class Beacon {
   Point location;
   Date startTime;
   Date endTime;
-  double range;
+  Double range;
   String placeName;
   String address;
   ArrayList<String> tags;
-  int notifiedCount;
-  ArrayList<String> notifiedUsers;
+  Integer notifiedCount;
+  ArrayList<String> notified;
 
   // empty constructor, creates database connection
   // the user's db connection is passed to the beacon as mdb
@@ -58,8 +63,8 @@ public class Beacon {
   // use when creating a new beacon
   // the user's db connection is passed to the beacon as mdb
   // follow by calling insert
-  public Beacon(MongoDatabase mdb, String authorName, String beaconTitle, double latCoord, double longCoord,
-                Date start, Date end, double beaconRange, String pName, String beaconAddress, ArrayList<String> tagList) {
+  public Beacon(MongoDatabase mdb, String authorName, String beaconTitle, Double latCoord, Double longCoord,
+                Date start, Date end, Double beaconRange, String pName, String beaconAddress, ArrayList<String> tagList) {
     // connect instance to database
     db = mdb;
     users = db.getCollection("users");
@@ -77,7 +82,7 @@ public class Beacon {
     notifiedCount = 1; // creator is considered first notified
     ArrayList<String> nu = new ArrayList<String>();
     nu.add(creator);
-    notifiedUsers = nu;
+    notified = nu;
   }
 
   // loads a unique beacon into the current Beacon instance
@@ -112,7 +117,7 @@ public class Beacon {
                         .append("placeName", this.placeName)
                         .append("address", this.address)
                         .append("notifiedCount", this.notifiedCount)
-                        .append("notified", this.notifiedUsers);
+                        .append("notified", this.notified);
 
       beacons.insertOne(beacon);
     }
@@ -163,7 +168,7 @@ public class Beacon {
       this.placeName = thisBeacon.getString("placeName");
       this.address = thisBeacon.getString("address");
       this.notifiedCount = thisBeacon.getInteger("notifiedCount");
-      this.notifiedUsers = thisBeacon.get("notified", ArrayList.class);
+      this.notified = thisBeacon.get("notified", ArrayList.class);
     }
 
     return found;
@@ -192,7 +197,7 @@ public class Beacon {
     return this.endTime;
   }
 
-  public double getRange() {
+  public Double getRange() {
     return this.range;
   }
 
@@ -208,26 +213,149 @@ public class Beacon {
     return this.tags;
   }
 
-  public int getNotifiedCount() {
+  public Integer getNotifiedCount() {
     return this.notifiedCount;
   }
 
   public ArrayList<String> getNotifiedUsers() {
-    return this.notifiedUsers;
+    return this.notified;
   }
 
   // Data member mutator methods
 
-  public boolean changeTitle(String newTitle) {
+  public boolean updateTitle(String newTitle) {
+    return updateBeaconField(this.title, newTitle);
+  }
+
+  public boolean updateLocation(Double latCoord, Double longCoord) {
+    Point newLocation = new Point(new Position(longCoord, latCoord));
+    return updateBeaconField(this.location, newLocation);
+  }
+
+  public boolean updateStartTime(Date start) {
+    return updateBeaconField(this.startTime, start);
+  }
+
+  public boolean updateEndTime(Date end) {
+    return updateBeaconField(this.endTime, end);
+  }
+
+  public boolean updateRange(Double newRange) {
+    return updateBeaconField(this.range, newRange);
+  }
+
+  public boolean updatePlaceName(String newPlaceName) {
+    return updateBeaconField(this.placeName, newPlaceName);
+  }
+
+  public boolean updateAddress(String newAddress) {
+    return updateBeaconField(this.address, newAddress);
+  }
+
+  public boolean addTag(String newTag) {
     UpdateResult ur = beacons.updateOne(
-                              and(asList(eq("creator", this.creator),
-                                         eq("endTime", this.endTime)
-                              )),
-                              set("title", newTitle)
+                                and(asList(eq("creator", this.creator),
+                                           eq("endTime", this.endTime)
+                                )),
+                                addToSet("tags", newTag)
     );
     boolean completed = (ur.getModifiedCount() > 0);
     if (completed) {
-      this.title = newTitle;
+      this.tags.add(newTag);
+    }
+    return completed;
+  }
+
+  public boolean addTags(ArrayList<String> newTags) {
+    UpdateResult ur = beacons.updateOne(
+                                and(asList(eq("creator", this.creator),
+                                           eq("endTime", this.endTime)
+                                )),
+                                addEachToSet("tags", newTags)
+    );
+    boolean completed = (ur.getModifiedCount() > 0);
+    if (completed) {
+      this.tags.addAll(newTags);
+    }
+    return completed;
+  }
+
+  public boolean removeTag(String removeTarget) {
+    UpdateResult ur = beacons.updateOne(
+                                and(asList(eq("creator", this.creator),
+                                           eq("endTime", this.endTime)
+                                )),
+                                pull("tags", removeTarget)
+    );
+    boolean completed = (ur.getModifiedCount() > 0);
+    if (completed) {
+      this.tags.remove(removeTarget);
+    }
+    return completed;
+  }
+
+  public boolean removeTags(ArrayList<String> removeTargets) {
+    UpdateResult ur = beacons.updateOne(
+                                and(asList(eq("creator", this.creator),
+                                           eq("endTime", this.endTime)
+                                )),
+                                pullAll("tags", removeTargets)
+    );
+    boolean completed = (ur.getModifiedCount() > 0);
+    if (completed) {
+      this.tags.removeAll(removeTargets);
+    }
+    return completed;
+  }
+
+  public boolean updateNotifiedCount(Integer newCount) {
+    return updateBeaconField(this.notifiedCount, newCount);
+  }
+
+  public boolean addOneNotified(String newNotified) {
+    UpdateResult ur = beacons.updateOne(
+                                and(asList(eq("creator", this.creator),
+                                           eq("endTime", this.endTime)
+                                )),
+                                addToSet("notified", newNotified)
+    );
+    boolean completed = (ur.getModifiedCount() > 0);
+    if (completed) {
+      this.notified.add(newNotified);
+    }
+    return completed;
+  }
+
+  public boolean addManyNotified(ArrayList<String> newNotifieds) {
+    UpdateResult ur = beacons.updateOne(
+                                and(asList(eq("creator", this.creator),
+                                           eq("endTime", this.endTime)
+                                )),
+                                addEachToSet("notified", newNotifieds)
+    );
+    boolean completed = (ur.getModifiedCount() > 0);
+    if (completed) {
+      this.notified.addAll(newNotifieds);
+    }
+    return completed;
+  }
+
+  // general method for simple beacon field updates
+  public boolean updateBeaconField(Object field, Object newFieldValue) {
+    boolean completed = true;
+    try {
+      UpdateResult ur = beacons.updateOne(
+                                and(asList(eq("creator", this.creator),
+                                           eq("endTime", this.endTime)
+                                )),
+                                set(field.toString(), newFieldValue)
+      );
+      completed = (ur.getModifiedCount() > 0);
+    } catch (MongoWriteException mwe) {
+      completed = false;
+    }
+    if (completed) {
+      field = newFieldValue;
     }
     return completed;
   }
@@ -249,10 +377,10 @@ public class Beacon {
                                      coordList.get(1),
                                      this.range / 3963.2 )),
         // only match users that are not in the previously notified list
-        match(nin( "username", this.notifiedUsers ))
+        match(nin( "username", this.notified ))
     ));
 
-    String result = JsonHelpers.iterableToJson("users", userAggregation);
+    String result = Helpers.iterableToJson("users", userAggregation);
     return result;
   }
 
@@ -272,10 +400,10 @@ public class Beacon {
       // then find those close to beacon
       match(geoWithinCenterSphere( "lastLocation", coordList.get(0), coordList.get(1), this.range / 3963.2)),
       // only match users that have not yet been notified
-      match(nin( "username", this.notifiedUsers ))
+      match(nin( "username", this.notified ))
     ));
 
-    String result = JsonHelpers.iterableToJson("users", userAggregation);
+    String result = Helpers.iterableToJson("users", userAggregation);
     return result;
   }
 }
